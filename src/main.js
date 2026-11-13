@@ -13,19 +13,31 @@ function rectangle(x) {
 }
 
 
-  title.textContent = '02 · Déplacer avec le temps';
-  instructions.textContent = 'Le joueur avance à 120 pixels par seconde et repart du bord.';
+  title.textContent = '03 · Lire le clavier';
+  instructions.textContent = 'Cliquer dans le Canvas, puis maintenir une flèche. Le joueur reste dans les limites.';
   controls.hidden = true;
-  let x = 0, previous = null, frameId;
+  let x = 300, previous = null, frameId;
+  const keys = new Set();
+  const down = event => { if (event.key.startsWith('Arrow')) { event.preventDefault(); keys.add(event.key); } };
+  const up = event => keys.delete(event.key);
+  const clear = () => keys.clear();
+  canvas.addEventListener('keydown', down);
+  canvas.addEventListener('keyup', up);
+  canvas.addEventListener('blur', clear);
   function frame(now) {
     const dt = previous === null ? 0 : Math.min((now - previous) / 1000, 0.05);
     previous = now;
-    x = (x + 120 * dt) % 600;
+    x = Math.max(0, Math.min(600, x + (Number(keys.has('ArrowRight')) - Number(keys.has('ArrowLeft'))) * 280 * dt));
     rectangle(x);
     frameId = requestAnimationFrame(frame);
   }
   frameId = requestAnimationFrame(frame);
-  cleanup = () => cancelAnimationFrame(frameId);
+  cleanup = () => {
+    cancelAnimationFrame(frameId);
+    canvas.removeEventListener('keydown', down);
+    canvas.removeEventListener('keyup', up);
+    canvas.removeEventListener('blur', clear);
+  };
 
 window.addEventListener('pagehide', cleanup, {once:true});
 if (import.meta.hot) import.meta.hot.dispose(cleanup);
