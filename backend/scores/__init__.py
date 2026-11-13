@@ -59,4 +59,12 @@ def create_app(database_url=None):
     def list_scores(session: DatabaseSession):
         return session.scalars(select(Score).order_by(Score.points.desc(), Score.id).limit(10)).all()
 
+    @app.post("/scores/", response_model=ScoreRead, status_code=201)
+    def save_score(data: ScoreCreate, session: DatabaseSession):
+        score = Score(**data.model_dump())
+        session.add(score)
+        session.commit()
+        session.refresh(score)
+        return score
+
     return app
