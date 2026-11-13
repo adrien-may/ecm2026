@@ -61,3 +61,9 @@ test('leaderboard is descending, limited, and stable for ties', async t => {
   assert.deepEqual(rows.map(row => row.points), [50, 50, 11, 10, 9, 8, 7, 6, 5, 4]);
 });
 
+test('scores survive an application restart', async t => {
+  const api = await setup(t);
+  await api.request('POST', {player: 'A', points: 30});
+  await api.restart();
+  assert.equal((await (await api.request()).json())[0].points, 30);
+});
