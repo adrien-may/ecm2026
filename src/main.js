@@ -13,10 +13,19 @@ function rectangle(x) {
 }
 
 
-  title.textContent = '01 · Dessiner un joueur';
-  instructions.textContent = 'Origine en haut à gauche. x va vers la droite, y vers le bas.';
-  rectangle(300);
+  title.textContent = '02 · Déplacer avec le temps';
+  instructions.textContent = 'Le joueur avance à 120 pixels par seconde et repart du bord.';
   controls.hidden = true;
+  let x = 0, previous = null, frameId;
+  function frame(now) {
+    const dt = previous === null ? 0 : Math.min((now - previous) / 1000, 0.05);
+    previous = now;
+    x = (x + 120 * dt) % 600;
+    rectangle(x);
+    frameId = requestAnimationFrame(frame);
+  }
+  frameId = requestAnimationFrame(frame);
+  cleanup = () => cancelAnimationFrame(frameId);
 
 window.addEventListener('pagehide', cleanup, {once:true});
 if (import.meta.hot) import.meta.hot.dispose(cleanup);
