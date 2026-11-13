@@ -1,8 +1,8 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.get("/bonjour")
 def hello():
-    return "<h1>Bonjour ECM</h1>"
+    return render_template("hello.html")

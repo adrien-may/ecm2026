@@ -1,6 +1,6 @@
-# 03-route : Une route testée
+# 04-template : Un template HTML
 
-Branche : `flask-03-route`. Ce dossier contient le code complet à la fin de cette étape.
+Branche : `flask-04-template`. Ce dossier contient le code complet à la fin de cette étape.
 
 ## Démarrer
 
@@ -13,9 +13,9 @@ uv run pytest -q
 uv run flask --app app:app run --debug --port 5001
 ```
 
-Résultat attendu : **2 passed ; GET /bonjour renvoie 200 et affiche Bonjour ECM.**
+Résultat attendu : **2 passed ; la page affiche toujours Bonjour ECM.**
 
-Fichiers introduits ou modifiés : app.py, tests/test_app.py.
+Fichiers introduits ou modifiés : app.py, templates/hello.html.
 
 ## Se repérer
 
@@ -27,14 +27,14 @@ Une archive ZIP contient la même étape sans historique Git.
 Pour reprendre une étape dans un dossier indépendant sans effacer le travail en cours, depuis le dépôt cloné :
 
 ```sh
-git worktree add --detach ../reprise-03-route origin/flask-03-route
-cd ../reprise-03-route
+git worktree add --detach ../reprise-04-template origin/flask-04-template
+cd ../reprise-04-template
 uv sync --locked
 ```
 
 ## Étape suivante
 
-Déplacer le HTML dans templates/hello.html sans changer le comportement.
+Écrire un test pour le prénom Samira, puis transmettre name au template.
 
 ## Où placer `__init__.py` ?
 
