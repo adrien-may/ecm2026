@@ -1,6 +1,6 @@
-# 05-name : Un prénom fourni par la request
+# 06-fixtures : Une application par test
 
-Branche : `flask-05-name`. Ce dossier contient le code complet à la fin de cette étape.
+Branche : `flask-06-fixtures`. Ce dossier contient le code complet à la fin de cette étape.
 
 ## Démarrer
 
@@ -10,12 +10,12 @@ Python 3.12 et uv sont nécessaires. Depuis la racine de ce dossier :
 uv sync --locked
 uv run python --version
 uv run pytest -q
-uv run flask --app app:app run --debug --port 5001
+uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **5 passed ; ECM par défaut, Samira et Élodie selon l’URL, balises échappées.**
+Résultat attendu : **5 passed ; même comportement après la réorganisation.**
 
-Fichiers introduits ou modifiés : app.py, templates/hello.html, tests/test_app.py.
+Fichiers introduits ou modifiés : app.py, tests/conftest.py, tests/test_app.py.
 
 ## Se repérer
 
@@ -27,14 +27,14 @@ Une archive ZIP contient la même étape sans historique Git.
 Pour reprendre une étape dans un dossier indépendant sans effacer le travail en cours, depuis le dépôt cloné :
 
 ```sh
-git worktree add --detach ../reprise-05-name origin/flask-05-name
-cd ../reprise-05-name
+git worktree add --detach ../reprise-06-fixtures origin/flask-06-fixtures
+cd ../reprise-06-fixtures
 uv sync --locked
 ```
 
 ## Étape suivante
 
-Factoriser la préparation des tests avec une factory et des fixtures.
+Paramétrer les deux prénoms, puis comparer deux stratégies de test.
 
 ## Où placer `__init__.py` ?
 
