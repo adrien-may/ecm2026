@@ -1,6 +1,6 @@
-# 01-flask : Une application Flask
+# 02-pytest : Notre premier test
 
-Branche : `flask-01-flask`. Ce dossier contient le code complet à la fin de cette étape.
+Branche : `flask-02-pytest`. Ce dossier contient le code complet à la fin de cette étape.
 
 ## Démarrer
 
@@ -9,12 +9,13 @@ Python 3.12 et uv sont nécessaires. Depuis la racine de ce dossier :
 ```sh
 uv sync --locked
 uv run python --version
+uv run pytest -q
 uv run flask --app app:app run --debug --port 5001
 ```
 
-Résultat attendu : **GET /bonjour renvoie 404 : aucune route ne traite encore cette URL.**
+Résultat attendu : **1 passed. Ce test vérifie la construction de Flask, pas une page web.**
 
-Fichiers introduits ou modifiés : app.py, pyproject.toml, uv.lock.
+Fichiers introduits ou modifiés : tests/test_app.py, pyproject.toml, uv.lock.
 
 ## Se repérer
 
@@ -26,11 +27,17 @@ Une archive ZIP contient la même étape sans historique Git.
 Pour reprendre une étape dans un dossier indépendant sans effacer le travail en cours, depuis le dépôt cloné :
 
 ```sh
-git worktree add --detach ../reprise-01-flask origin/flask-01-flask
-cd ../reprise-01-flask
+git worktree add --detach ../reprise-02-pytest origin/flask-02-pytest
+cd ../reprise-02-pytest
 uv sync --locked
 ```
 
 ## Étape suivante
 
-Installer pytest et tester la construction de l’application.
+Écrire le test de GET /bonjour : il doit échouer avec 404.
+
+## Où placer `__init__.py` ?
+
+Le fichier vide `tests/__init__.py` se trouve directement dans `tests/`, à côté de `test_app.py` et, à partir de 06, de `conftest.py`. Il fait de `tests/` un package Python explicite. Ne pas créer `tests/tests/__init__.py`.
+
+`app.py` est un module, pas un dossier package : aucun `__init__.py` à la racine du projet. Le dossier HTML `templates/` n’en a pas besoin. Pytest peut découvrir des tests sans ce fichier ; l’atelier utilise un package explicite pour que ses imports soient prévisibles.
