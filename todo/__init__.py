@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 from .database import make_engine
 from .models import Task
-from .schemas import TaskCreate, TaskRead
+from .schemas import TaskCreate, TaskPatch, TaskRead
 
 
 def create_app(database_url=None):
@@ -38,5 +38,30 @@ def create_app(database_url=None):
         session.commit()
         session.refresh(task)
         return task
+
+    def find_task(session, task_id):
+        task = session.get(Task, task_id)
+        if task is None:
+            raise HTTPException(404, detail="Task not found")
+        return task
+
+    @app.get("/tasks/{task_id}", response_model=TaskRead)
+    def get_task(task_id: int, session: DatabaseSession):
+        return find_task(session, task_id)
+
+    @app.patch("/tasks/{task_id}", response_model=TaskRead)
+    def update_task(task_id: int, data: TaskPatch, session: DatabaseSession):
+        task = find_task(session, task_id)
+        for key, value in data.model_dump(exclude_unset=True).items():
+            setattr(task, key, value)
+        session.commit()
+        session.refresh(task)
+        return task
+
+    @app.delete("/tasks/{task_id}", status_code=204)
+    def delete_task(task_id: int, session: DatabaseSession):
+        session.delete(find_task(session, task_id))
+        session.commit()
+        return Response(status_code=204)
 
     return app
