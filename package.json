@@ -1,0 +1,25 @@
+{
+  "name": "ecm26-nest-scores",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "ts-node src/main.ts",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.1.11",
+    "@nestjs/core": "11.1.11",
+    "@nestjs/platform-express": "11.1.11",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
+  }
+}
