@@ -1,6 +1,6 @@
-# 00-ready : Un projet Python
+# 01-flask : Une application Flask
 
-Branche : `flask-00-ready`. Ce dossier contient le code complet à la fin de cette étape.
+Branche : `flask-01-flask`. Ce dossier contient le code complet à la fin de cette étape.
 
 ## Démarrer
 
@@ -9,11 +9,12 @@ Python 3.12 et uv sont nécessaires. Depuis la racine de ce dossier :
 ```sh
 uv sync --locked
 uv run python --version
+uv run flask --app app:app run --debug --port 5001
 ```
 
-Résultat attendu : **Python 3.12.x ; aucune dépendance applicative.**
+Résultat attendu : **GET /bonjour renvoie 404 : aucune route ne traite encore cette URL.**
 
-Fichiers introduits ou modifiés : pyproject.toml, .python-version.
+Fichiers introduits ou modifiés : app.py, pyproject.toml, uv.lock.
 
 ## Se repérer
 
@@ -25,11 +26,11 @@ Une archive ZIP contient la même étape sans historique Git.
 Pour reprendre une étape dans un dossier indépendant sans effacer le travail en cours, depuis le dépôt cloné :
 
 ```sh
-git worktree add --detach ../reprise-00-ready origin/flask-00-ready
-cd ../reprise-00-ready
+git worktree add --detach ../reprise-01-flask origin/flask-01-flask
+cd ../reprise-01-flask
 uv sync --locked
 ```
 
 ## Étape suivante
 
-Installer Flask, puis créer app.py.
+Installer pytest et tester la construction de l’application.
