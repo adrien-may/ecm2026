@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+
 import pytest
 
 
@@ -6,7 +7,6 @@ def test_list_starts_empty(client):
     response = client.get("/tasks/")
     assert response.status_code == 200
     assert response.json == []
-
 
 
 def test_create_and_read(client):
@@ -20,7 +20,6 @@ def test_create_and_read(client):
     assert client.get("/tasks/").json == [task]
 
 
-
 @pytest.mark.parametrize("data", [
     {}, {"title": " "}, {"title": "x" * 256}, {"title": 1},
     {"title": None}, {"title": "x", "done": True}, [], None,
@@ -32,12 +31,10 @@ def test_invalid_create_leaves_list_empty(client, data):
     assert client.get("/tasks/").json == []
 
 
-
 def test_duplicate_titles_are_allowed(client):
     first = client.post("/tasks/", json={"title": "Lire"}).json
     second = client.post("/tasks/", json={"title": "Lire"}).json
     assert first["id"] != second["id"]
-
 
 
 def test_partial_update_and_delete_preserve_other_task(client):
@@ -57,13 +54,11 @@ def test_partial_update_and_delete_preserve_other_task(client):
     assert client.get("/tasks/").json == [second]
 
 
-
 @pytest.mark.parametrize("method", ["get", "patch", "delete"])
 def test_missing_task(client, method):
     response = getattr(client, method)("/tasks/999")
     assert response.status_code == 404
     assert response.is_json
-
 
 
 @pytest.mark.parametrize("fields", [
@@ -79,7 +74,6 @@ def test_invalid_patch_does_not_partially_modify_task(client, fields):
     assert client.get(url).json == task
 
 
-
 def test_json_and_method_errors(client):
     malformed = client.post("/tasks/", data="{", content_type="application/json")
     assert malformed.status_code == 400
@@ -90,6 +84,3 @@ def test_json_and_method_errors(client):
     wrong_method = client.put("/tasks/")
     assert wrong_method.status_code == 405
     assert "GET" in wrong_method.headers["Allow"]
-
-
-

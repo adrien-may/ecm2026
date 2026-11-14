@@ -22,3 +22,13 @@ def test_new_application_reads_committed_data(tmp_path):
             db.session.remove()
             db.engine.dispose()
 
+
+def test_cors_allows_only_classroom_client(client):
+    allowed = client.options("/tasks/", headers={
+        "Origin": "http://localhost:5173",
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "content-type",
+    })
+    assert allowed.headers["Access-Control-Allow-Origin"] == "http://localhost:5173"
+    denied = client.get("/tasks/", headers={"Origin": "https://unrelated.example"})
+    assert "Access-Control-Allow-Origin" not in denied.headers

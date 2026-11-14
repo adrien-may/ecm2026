@@ -1,6 +1,6 @@
-# flask-13-sqlite
+# flask-14-cors
 
-Conserver les tasks dans SQLite et isoler la database des tests.
+Connecter le client React avec CORS.
 
 ## Lancer ce checkpoint
 
@@ -13,7 +13,7 @@ uv run flask --app todo init-db
 uv run flask --app todo run --debug --port 5001
 ```
 
-Résultat attendu : **32 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **33 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 

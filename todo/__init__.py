@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from flask import Flask, abort, render_template, request
+from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 
 from .models import Task, db
@@ -30,12 +31,14 @@ def create_app(test_config=None):
     app = Flask(__name__)
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI="sqlite:///flask-todo.sqlite",
+        CORS_ORIGINS=["http://localhost:5173", "http://127.0.0.1:5173"],
     )
     if test_config:
         app.config.update(test_config)
     Path(app.instance_path).mkdir(parents=True, exist_ok=True)
     # Configuration must be final before initializing the extension.
     db.init_app(app)
+    CORS(app, resources={r"/tasks/*": {"origins": app.config["CORS_ORIGINS"]}})
 
     @app.cli.command("init-db")
     def init_db():
