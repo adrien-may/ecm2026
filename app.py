@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 
 def create_app():
     app = Flask(__name__)
+    tasks = {}
 
     @app.get("/bonjour")
     def hello():
@@ -13,5 +14,9 @@ def create_app():
     def hello_json():
         name = request.args.get("name", "ECM")
         return {"message": f"Bonjour {name}"}
+
+    @app.get("/tasks/")
+    def list_tasks():
+        return list(tasks.values())
 
     return app

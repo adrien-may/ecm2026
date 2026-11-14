@@ -30,7 +30,7 @@ wheels = [
 ]
 
 [[package]]
-name = "ecm26-flask-ssr"
+name = "ecm26-flask-todo"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

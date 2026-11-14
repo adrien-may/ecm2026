@@ -1,6 +1,6 @@
-# flask-08-json
+# flask-09-list
 
-La page SSR et la route JSON coexistent.
+Lire une collection de tasks vide.
 
 ## Lancer ce checkpoint
 
@@ -12,7 +12,7 @@ uv run pytest -q
 uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **8 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **9 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
