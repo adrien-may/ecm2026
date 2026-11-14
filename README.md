@@ -1,6 +1,6 @@
-# flask-15-marshmallow
+# flask-16-blueprint
 
-Remplacer la validation et la serialization manuelles par Marshmallow.
+Regrouper les routes du CRUD dans un Blueprint natif Flask.
 
 ## Lancer ce checkpoint
 

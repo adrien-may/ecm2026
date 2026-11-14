@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from flask import Flask, abort, render_template, request
+from flask import Flask, render_template, request
 from flask_cors import CORS
 from marshmallow import ValidationError
 from werkzeug.exceptions import HTTPException
 
-from .models import Task, db
-from .schemas import TaskPatchSchema, TaskSchema
+from .models import db
+from .tasks import tasks_blueprint
 
 
 def create_app(test_config=None):
@@ -52,44 +52,5 @@ def create_app(test_config=None):
         name = request.args.get("name", "ECM")
         return {"message": f"Bonjour {name}"}
 
-    @app.get("/tasks/")
-    def list_tasks():
-        query = db.select(Task).order_by(Task.id)
-        tasks = db.session.scalars(query).all()
-        return TaskSchema(many=True).dump(tasks)
-
-    @app.post("/tasks/")
-    def create_task():
-        data = TaskSchema().load(request.get_json())
-        task = Task(**data)
-        db.session.add(task)
-        db.session.commit()
-        return TaskSchema().dump(task), 201
-
-    def find_task(task_id):
-        task = db.session.get(Task, task_id)
-        if task is None:
-            abort(404, description="Task not found")
-        return task
-
-    @app.get("/tasks/<int:task_id>")
-    def get_task(task_id):
-        return TaskSchema().dump(find_task(task_id))
-
-    @app.patch("/tasks/<int:task_id>")
-    def update_task(task_id):
-        task = find_task(task_id)
-        schema = TaskPatchSchema(partial=True)
-        fields = schema.load(request.get_json())
-        for key, value in fields.items():
-            setattr(task, key, value)
-        db.session.commit()
-        return TaskSchema().dump(task)
-
-    @app.delete("/tasks/<int:task_id>")
-    def delete_task(task_id):
-        db.session.delete(find_task(task_id))
-        db.session.commit()
-        return "", 204
-
+    app.register_blueprint(tasks_blueprint)
     return app
