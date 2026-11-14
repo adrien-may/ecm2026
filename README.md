@@ -1,43 +1,29 @@
-# 06-fixtures : Une application par test
+# flask-07-test-quality
 
-Branche : `flask-06-fixtures`. Ce dossier contient le code complet à la fin de cette étape.
+Parametrize, test de comparaison, template signal et régression volontaire.
 
-## Démarrer
+## Lancer ce checkpoint
 
-Python 3.12 et uv sont nécessaires. Depuis la racine de ce dossier :
+Ouvrir ce dossier dans l’éditeur. Lancer depuis la racine qui contient `pyproject.toml` :
 
 ```sh
 uv sync --locked
-uv run python --version
 uv run pytest -q
 uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **5 passed ; même comportement après la réorganisation.**
+Résultat attendu : **7 passed**. La page `/bonjour?name=Samira` reste disponible.
 
-Fichiers introduits ou modifiés : app.py, tests/conftest.py, tests/test_app.py.
+## Fichiers et packages
 
-## Se repérer
+`app.py` est un module autonome ; aucun package todo à ce stade. `tests/__init__.py` existe et reste vide. Les fichiers de tests sont directement dans `tests/`, y compris `conftest.py` et `test_template_signal.py`. Aucun `__init__.py` à la racine du projet, dans `templates/` ou dans `instance/`.
 
-L’atelier avance dans cet ordre : 00-ready, 01-flask, 02-pytest, 03-route, 04-template, 05-name, 06-fixtures, 07-test-quality, 08-json.
+`captured_templates` écoute `template_rendered` pour cette app pendant le test, puis se désabonne dans finally. Le test vérifie le template choisi et son context ; il ne remplace pas les assertions sur le HTML reçu. Blinker est déjà une dépendance de Flask.
 
-Avec le bundle Git, `git log --oneline` et `git diff HEAD~1` montrent la modification depuis l’étape précédente (sauf 00-ready, qui est le point de départ).
-Une archive ZIP contient la même étape sans historique Git.
+Les étapes 09–12 stockent les tasks en mémoire. À partir de 13, `init-db` crée les tables absentes dans `instance/flask-todo.sqlite`, sans effacer les données existantes. Les tests utilisent des fichiers temporaires isolés. Aux étapes 15 et 16, les mêmes 33 tests restent verts.
 
-Pour reprendre une étape dans un dossier indépendant sans effacer le travail en cours, depuis le dépôt cloné :
+Pour reprendre, décompresser un ZIP dans un nouveau dossier ou créer un worktree depuis le bundle. Ne pas écraser un travail en cours. Après tout changement de checkpoint, relancer `uv sync --locked`.
 
-```sh
-git worktree add --detach ../reprise-06-fixtures origin/flask-06-fixtures
-cd ../reprise-06-fixtures
-uv sync --locked
-```
+## Expérience de régression
 
-## Étape suivante
-
-Paramétrer les deux prénoms, puis comparer deux stratégies de test.
-
-## Où placer `__init__.py` ?
-
-Le fichier vide `tests/__init__.py` se trouve directement dans `tests/`, à côté de `test_app.py` et, à partir de 06, de `conftest.py`. Il fait de `tests/` un package Python explicite. Ne pas créer `tests/tests/__init__.py`.
-
-`app.py` est un module, pas un dossier package : aucun `__init__.py` à la racine du projet. Le dossier HTML `templates/` n’en a pas besoin. Pytest peut découvrir des tests sans ce fichier ; l’atelier utilise un package explicite pour que ses imports soient prévisibles.
+Dans `templates/hello.html`, remplacer `<h1>Bonjour {{ name }}</h1>` par `<h1>Bonjour</h1>`. `uv run pytest -q -k matches_its_template` et `uv run pytest -q -k uses_expected_template` restent verts (1 passed chacun). `uv run pytest -q -k displays_requested_name` donne 2 failed : le HTML ne satisfait plus le besoin du visiteur. Restaurer la ligne initiale pour retrouver 7 passed.
