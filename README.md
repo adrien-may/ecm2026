@@ -1,4 +1,4 @@
-# Jour 2 · Le même contrat avec FastAPI
+# Approfondissement · FastAPI avec SQLModel
 
 Cette solution complète (`fastapi-03-sqlmodel`) remplace les routes JSON de Flask. Le client et le contrat `/tasks/` restent identiques. Le SSR a été étudié et conservé dans le projet Flask ; il n'est pas réimplémenté ici.
 
@@ -10,6 +10,8 @@ uv run uvicorn todo:create_app --factory --reload --port 8000
 ```
 
 Attendu : **25 passed**. Ouvrir `http://localhost:8000/docs` pour essayer les requests, puis utiliser le client React avec `VITE_API_URL=http://localhost:8000`. Redémarrer Vite après ce changement. La nouvelle database `instance/fastapi-todo.sqlite` ne contient pas les tasks créées sous Flask.
+
+Le parcours commun du jour 2 s’arrête à **fastapi-02-crud**, avec SQLAlchemy. Extraire son ZIP pour suivre cette partie du cours. Le présent dossier correspond à l’option SQLModel, dans le support séparé slides/options.md ; il n’est pas un prérequis du projet de jeu.
 
 ## Checkpoints
 
