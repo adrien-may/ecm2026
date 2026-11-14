@@ -1,6 +1,6 @@
-# flask-12-package
+# flask-13-sqlite
 
-Déplacer le backend dans le package todo sans changer le comportement.
+Conserver les tasks dans SQLite et isoler la database des tests.
 
 ## Lancer ce checkpoint
 
@@ -9,10 +9,11 @@ Ouvrir ce dossier dans l’éditeur. Lancer depuis la racine qui contient `pypro
 ```sh
 uv sync --locked
 uv run pytest -q
+uv run flask --app todo init-db
 uv run flask --app todo run --debug --port 5001
 ```
 
-Résultat attendu : **31 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **32 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 

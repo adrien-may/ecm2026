@@ -1,7 +1,9 @@
-from datetime import datetime, timezone
+from pathlib import Path
 
 from flask import Flask, abort, render_template, request
 from werkzeug.exceptions import HTTPException
+
+from .models import Task, db
 
 
 def read_fields(*, partial=False):
@@ -24,10 +26,22 @@ def read_fields(*, partial=False):
     return data
 
 
-def create_app():
+def create_app(test_config=None):
     app = Flask(__name__)
-    tasks = {}
-    next_id = 1
+    app.config.from_mapping(
+        SQLALCHEMY_DATABASE_URI="sqlite:///flask-todo.sqlite",
+    )
+    if test_config:
+        app.config.update(test_config)
+    Path(app.instance_path).mkdir(parents=True, exist_ok=True)
+    # Configuration must be final before initializing the extension.
+    db.init_app(app)
+
+    @app.cli.command("init-db")
+    def init_db():
+        """Create missing tables; this does not migrate existing columns."""
+        db.create_all()
+        print("Database ready")
 
     @app.errorhandler(HTTPException)
     def http_error(error):
@@ -49,39 +63,40 @@ def create_app():
 
     @app.get("/tasks/")
     def list_tasks():
-        return list(tasks.values())
+        query = db.select(Task).order_by(Task.id)
+        tasks = db.session.scalars(query).all()
+        return [task.to_dict() for task in tasks]
 
     @app.post("/tasks/")
     def create_task():
-        nonlocal next_id
-        data = read_fields()
-        task = {
-            "id": next_id, "title": data["title"], "done": False,
-            "creation_date": datetime.now(timezone.utc).isoformat(),
-        }
-        tasks[next_id] = task
-        next_id += 1
-        return task, 201
+        task = Task(**read_fields())
+        db.session.add(task)
+        db.session.commit()
+        return task.to_dict(), 201
 
     def find_task(task_id):
-        if task_id not in tasks:
+        task = db.session.get(Task, task_id)
+        if task is None:
             abort(404, description="Task not found")
-        return tasks[task_id]
+        return task
 
     @app.get("/tasks/<int:task_id>")
     def get_task(task_id):
-        return find_task(task_id)
+        return find_task(task_id).to_dict()
 
     @app.patch("/tasks/<int:task_id>")
     def update_task(task_id):
         task = find_task(task_id)
-        task.update(read_fields(partial=True))
-        return task
+        fields = read_fields(partial=True)
+        for key, value in fields.items():
+            setattr(task, key, value)
+        db.session.commit()
+        return task.to_dict()
 
     @app.delete("/tasks/<int:task_id>")
     def delete_task(task_id):
-        find_task(task_id)
-        del tasks[task_id]
+        db.session.delete(find_task(task_id))
+        db.session.commit()
         return "", 204
 
     return app
