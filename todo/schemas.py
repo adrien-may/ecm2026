@@ -31,3 +31,8 @@ class TaskPatchSchema(TaskSchema):
     def require_change(self, data, **kwargs):
         if not data:
             raise ValidationError("Provide title or done")
+
+
+class ErrorSchema(Schema):
+    error = fields.String()
+    details = fields.Raw()

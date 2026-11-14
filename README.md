@@ -1,6 +1,6 @@
-# flask-16-blueprint
+# flask-17-openapi
 
-Regrouper les routes du CRUD dans un Blueprint natif Flask.
+Relier les schemas aux routes avec Flask-smorest et explorer OpenAPI dans Swagger UI.
 
 ## Lancer ce checkpoint
 
@@ -13,7 +13,7 @@ uv run flask --app todo init-db
 uv run flask --app todo run --debug --port 5001
 ```
 
-Résultat attendu : **33 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **35 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
@@ -24,3 +24,9 @@ Résultat attendu : **33 passed**. La page `/bonjour?name=Samira` reste disponib
 Les étapes 09–12 stockent les tasks en mémoire. À partir de 13, `init-db` crée les tables absentes dans `instance/flask-todo.sqlite`, sans effacer les données existantes. Les tests utilisent des fichiers temporaires isolés. Aux étapes 15 et 16, les mêmes 33 tests restent verts.
 
 Pour reprendre, décompresser un ZIP dans un nouveau dossier ou créer un worktree depuis le bundle. Ne pas écraser un travail en cours. Après tout changement de checkpoint, relancer `uv sync --locked`.
+
+## Documentation interactive
+
+Ouvrir <http://localhost:5001/openapi/swagger>. Le document OpenAPI est <http://localhost:5001/openapi/openapi.json>. Swagger UI charge ses fichiers depuis jsDelivr, donc prévoir Internet au premier chargement. Try it out puis Execute envoie une vraie request et peut écrire dans SQLite. Les 33 tests du checkpoint précédent sont conservés, plus deux tests de documentation.
+
+`@arguments` appelle load et injecte les champs ; `@response` appelle dump et documente le status. La factory utilise `api.register_blueprint`. Nos error handlers restent après `api.init_app` pour conserver leur format et les headers. Le hook before_request maintient 404 pour un ID absent et 415 pour un mauvais Content-Type.

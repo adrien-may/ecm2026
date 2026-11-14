@@ -2,16 +2,24 @@ from pathlib import Path
 
 from flask import Flask, render_template, request
 from flask_cors import CORS
+from flask_smorest import Api
 from marshmallow import ValidationError
 from werkzeug.exceptions import HTTPException
 
 from .models import db
+from .schemas import ErrorSchema
 from .tasks import tasks_blueprint
 
 
 def create_app(test_config=None):
     app = Flask(__name__)
     app.config.from_mapping(
+        API_TITLE="ECM Todo API",
+        API_VERSION="1.0",
+        OPENAPI_VERSION="3.0.3",
+        OPENAPI_URL_PREFIX="/openapi",
+        OPENAPI_SWAGGER_UI_PATH="/swagger",
+        OPENAPI_SWAGGER_UI_URL="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.32.0/",
         SQLALCHEMY_DATABASE_URI="sqlite:///flask-todo.sqlite",
         CORS_ORIGINS=["http://localhost:5173", "http://127.0.0.1:5173"],
     )
@@ -21,6 +29,10 @@ def create_app(test_config=None):
     # Configuration must be final before initializing the extension.
     db.init_app(app)
     CORS(app, resources={r"/tasks/*": {"origins": app.config["CORS_ORIGINS"]}})
+
+    api = Api()
+    api.ERROR_SCHEMA = ErrorSchema
+    api.init_app(app)
 
     @app.cli.command("init-db")
     def init_db():
@@ -52,5 +64,5 @@ def create_app(test_config=None):
         name = request.args.get("name", "ECM")
         return {"message": f"Bonjour {name}"}
 
-    app.register_blueprint(tasks_blueprint)
+    api.register_blueprint(tasks_blueprint)
     return app
