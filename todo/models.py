@@ -1,17 +1,12 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-
-
-class Base(DeclarativeBase):
-    pass
+from sqlmodel import Field
+from .schemas import TaskBase
 
 
-class Task(Base):
-    __tablename__ = "task"
-    id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str]
-    done: Mapped[bool] = mapped_column(default=False)
-    creation_date: Mapped[str] = mapped_column(
-        default=lambda: datetime.now(timezone.utc).isoformat()
+class Task(TaskBase, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    done: bool = False
+    creation_date: str = Field(
+        default_factory=lambda: datetime.now(UTC).isoformat()
     )

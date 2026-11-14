@@ -2,8 +2,7 @@ from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlmodel import Session, select
 
 from .database import make_engine
 from .models import Task
@@ -29,11 +28,12 @@ def create_app(database_url=None):
 
     @app.get("/tasks/", response_model=list[TaskRead])
     def list_tasks(session: DatabaseSession):
-        return session.scalars(select(Task).order_by(Task.id)).all()
+        query = select(Task).order_by(Task.id)
+        return session.exec(query).all()
 
     @app.post("/tasks/", response_model=TaskRead, status_code=201)
     def create_task(data: TaskCreate, session: DatabaseSession):
-        task = Task(**data.model_dump())
+        task = Task.model_validate(data)
         session.add(task)
         session.commit()
         session.refresh(task)
@@ -52,8 +52,8 @@ def create_app(database_url=None):
     @app.patch("/tasks/{task_id}", response_model=TaskRead)
     def update_task(task_id: int, data: TaskPatch, session: DatabaseSession):
         task = find_task(session, task_id)
-        for key, value in data.model_dump(exclude_unset=True).items():
-            setattr(task, key, value)
+        changes = data.model_dump(exclude_unset=True)
+        task.sqlmodel_update(changes)
         session.commit()
         session.refresh(task)
         return task

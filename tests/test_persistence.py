@@ -1,13 +1,13 @@
 from fastapi.testclient import TestClient
 
 from todo import create_app
-from todo.models import Base
+from sqlmodel import SQLModel
 
 
 def test_new_application_reads_committed_data(tmp_path):
     url = f"sqlite:///{tmp_path / 'restart.sqlite'}"
     first = create_app(url)
-    Base.metadata.create_all(first.state.engine)
+    SQLModel.metadata.create_all(first.state.engine)
     with TestClient(first) as client:
         task = client.post("/tasks/", json={"title": "Persistée"}).json()
     first.state.engine.dispose()

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from sqlalchemy import create_engine
+from sqlmodel import create_engine
 
 
 def make_engine(database_url=None):

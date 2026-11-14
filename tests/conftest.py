@@ -2,13 +2,13 @@ import pytest
 from fastapi.testclient import TestClient
 
 from todo import create_app
-from todo.models import Base
+from sqlmodel import SQLModel
 
 
 @pytest.fixture
 def app(tmp_path):
     app = create_app(f"sqlite:///{tmp_path / 'test.sqlite'}")
-    Base.metadata.create_all(app.state.engine)
+    SQLModel.metadata.create_all(app.state.engine)
     yield app
     app.state.engine.dispose()
 

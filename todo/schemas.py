@@ -1,6 +1,8 @@
 from typing import Annotated
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StringConstraints, model_validator
+from sqlmodel import SQLModel
+
+from pydantic import ConfigDict, StrictBool, StringConstraints, model_validator
 
 
 Title = Annotated[str, StringConstraints(
@@ -8,12 +10,16 @@ Title = Annotated[str, StringConstraints(
 )]
 
 
-class TaskCreate(BaseModel):
+class TaskBase(SQLModel):
     model_config = ConfigDict(extra="forbid")
     title: Title
 
 
-class TaskPatch(BaseModel):
+class TaskCreate(TaskBase):
+    pass
+
+
+class TaskPatch(SQLModel):
     model_config = ConfigDict(extra="forbid")
     title: Title | None = None
     done: StrictBool | None = None
@@ -28,9 +34,7 @@ class TaskPatch(BaseModel):
         return self
 
 
-class TaskRead(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
+class TaskRead(TaskBase):
     id: int
-    title: str
     done: bool
     creation_date: str

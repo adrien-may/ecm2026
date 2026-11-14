@@ -1,11 +1,11 @@
 from .database import make_engine
-from .models import Base
+from sqlmodel import SQLModel
 
 
 def main():
     engine = make_engine()
     try:
-        Base.metadata.create_all(engine)
+        SQLModel.metadata.create_all(engine)
         print("Database ready")
     finally:
         engine.dispose()
