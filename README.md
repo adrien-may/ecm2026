@@ -1,6 +1,8 @@
-# Jour 2 · NestJS en une heure guidée
+# Approfondissement · Le même classement avec NestJS
 
 Objectif : suivre une request validée depuis un controller jusqu'à un service puis un stockage fourni. Le jeu et le contrat `/scores/` sont déjà connus. Nous ne découvrons pas en même temps un nouveau jeu, un nouveau langage et un nouvel ORM.
+
+Cet atelier est hors du parcours commun du jour 2. Terminer le trajet jeu → FastAPI → classement avant de remplacer le backend. Le support slides/options.md conserve la progression guidée.
 
 ## Lancer le résultat
 
