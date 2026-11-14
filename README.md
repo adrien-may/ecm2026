@@ -1,6 +1,6 @@
-# flask-09-list
+# flask-10-create
 
-Lire une collection de tasks vide.
+Créer et valider une task, puis relire la collection.
 
 ## Lancer ce checkpoint
 
@@ -12,7 +12,7 @@ uv run pytest -q
 uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **9 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **20 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
