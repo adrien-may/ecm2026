@@ -19,11 +19,3 @@ class Task(db.Model):
     creation_date: Mapped[str] = mapped_column(
         default=lambda: datetime.now(timezone.utc).isoformat()
     )
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "done": self.done,
-            "creation_date": self.creation_date,
-        }

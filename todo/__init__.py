@@ -2,29 +2,11 @@ from pathlib import Path
 
 from flask import Flask, abort, render_template, request
 from flask_cors import CORS
+from marshmallow import ValidationError
 from werkzeug.exceptions import HTTPException
 
 from .models import Task, db
-
-
-def read_fields(*, partial=False):
-    data = request.get_json()
-    if not isinstance(data, dict):
-        abort(400, description="Expected a JSON object")
-    allowed = {"title", "done"} if partial else {"title"}
-    if not data or set(data) - allowed:
-        abort(400, description="Unexpected or missing fields")
-    if not partial and "title" not in data:
-        abort(400, description="title is required")
-    if "title" in data:
-        if not isinstance(data["title"], str):
-            abort(400, description="title must be a string")
-        data["title"] = data["title"].strip()
-        if not 1 <= len(data["title"]) <= 255:
-            abort(400, description="title must contain 1 to 255 characters")
-    if "done" in data and type(data["done"]) is not bool:
-        abort(400, description="done must be a boolean")
-    return data
+from .schemas import TaskPatchSchema, TaskSchema
 
 
 def create_app(test_config=None):
@@ -45,6 +27,12 @@ def create_app(test_config=None):
         """Create missing tables; this does not migrate existing columns."""
         db.create_all()
         print("Database ready")
+
+    @app.errorhandler(ValidationError)
+    def validation_error(error):
+        body = {"error": "Invalid task fields"}
+        body["details"] = error.messages
+        return body, 400
 
     @app.errorhandler(HTTPException)
     def http_error(error):
@@ -68,14 +56,15 @@ def create_app(test_config=None):
     def list_tasks():
         query = db.select(Task).order_by(Task.id)
         tasks = db.session.scalars(query).all()
-        return [task.to_dict() for task in tasks]
+        return TaskSchema(many=True).dump(tasks)
 
     @app.post("/tasks/")
     def create_task():
-        task = Task(**read_fields())
+        data = TaskSchema().load(request.get_json())
+        task = Task(**data)
         db.session.add(task)
         db.session.commit()
-        return task.to_dict(), 201
+        return TaskSchema().dump(task), 201
 
     def find_task(task_id):
         task = db.session.get(Task, task_id)
@@ -85,16 +74,17 @@ def create_app(test_config=None):
 
     @app.get("/tasks/<int:task_id>")
     def get_task(task_id):
-        return find_task(task_id).to_dict()
+        return TaskSchema().dump(find_task(task_id))
 
     @app.patch("/tasks/<int:task_id>")
     def update_task(task_id):
         task = find_task(task_id)
-        fields = read_fields(partial=True)
+        schema = TaskPatchSchema(partial=True)
+        fields = schema.load(request.get_json())
         for key, value in fields.items():
             setattr(task, key, value)
         db.session.commit()
-        return task.to_dict()
+        return TaskSchema().dump(task)
 
     @app.delete("/tasks/<int:task_id>")
     def delete_task(task_id):

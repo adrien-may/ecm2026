@@ -1,6 +1,6 @@
-# flask-14-cors
+# flask-15-marshmallow
 
-Connecter le client React avec CORS.
+Remplacer la validation et la serialization manuelles par Marshmallow.
 
 ## Lancer ce checkpoint
 
