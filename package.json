@@ -1,0 +1,21 @@
+{
+  "name": "ecm26",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "slides": "slidev slides/slides.md",
+    "slides:build": "slidev build slides/slides.md",
+    "slides:export": "slidev export slides/slides.md --per-slide --wait-until networkidle --wait 200 --output output/ecm26-three-days.pdf && slidev export slides/options.md --per-slide --wait-until networkidle --wait 200 --output output/ecm26-options.pdf && uv run --no-project --python 3.12 --with pypdf==6.21.4 python scripts/fix_pdf_links.py",
+    "verify:checkpoints": "python3 scripts/verify_flask_checkpoints.py && python3 scripts/verify_course.py && python3 scripts/verify_flask_creation_walkthrough.py && python3 scripts/verify_flask_structure_walkthrough.py && python3 scripts/verify_sqlmodel_walkthrough.py",
+    "slides:options": "slidev slides/options.md",
+    "slides:build:options": "slidev build slides/options.md --out dist-options"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@slidev/cli": "53.1.0",
+    "@slidev/theme-default": "0.25.0",
+    "playwright-chromium": "1.65.1"
+  }
+}

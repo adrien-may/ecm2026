@@ -1,0 +1,131 @@
+.slidev-layout {
+  --slidev-code-font-size: 20px;
+  --slidev-code-line-height: 1.45;
+  --slidev-code-padding: 16px 20px;
+  --slidev-code-margin: 18px 0;
+  --slidev-code-background: #f0f2ef;
+  background: #faf9f6;
+  color: #243d38;
+  padding: 42px 54px 54px;
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+.slidev-layout h1 {
+  color: #314d47;
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.slidev-layout.cover h1 {
+  font-size: 68px;
+  margin-top: 26px;
+}
+
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
+.slidev-layout strong {
+  color: #b02e47;
+}
+
+.slidev-layout pre code {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.slidev-layout table {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.slidev-layout th {
+  font-weight: 700;
+  border-bottom: 2px solid #53635f;
+}
+
+.slidev-layout th,
+.slidev-layout td {
+  padding: 10px 12px;
+}
+
+.slidev-layout .eyebrow {
+  font-size: 19px;
+}
+
+.slidev-layout .eyebrow {
+  color: #b02e47;
+}
+
+.slidev-layout .lesson-step {
+  position: absolute;
+  top: 14px;
+  right: 54px;
+  color: #53635f;
+  font-size: 14px;
+}
+
+.slidev-layout .speaker-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  margin-top: 42px;
+}
+
+.slidev-layout .speaker-intro h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.slidev-layout .speaker-links {
+  font-size: 21px;
+}
+
+.slidev-layout .speaker-links h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.slidev-layout .speaker-links p + h3 {
+  margin-top: 30px;
+}
+
+.course-footer {
+  position: absolute;
+  bottom: 9px;
+  left: 54px;
+  right: 54px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #53635f;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.course-footer img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.course-footer .school-logo {
+  width: 98px;
+  height: 36px;
+}
+
+.course-footer .company-logo {
+  width: 88px;
+  height: 44px;
+}
+
+.course-footer span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}

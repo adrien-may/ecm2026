@@ -1,0 +1,167 @@
+[
+  {
+    "branch": "flask-00-ready",
+    "commit": "def5092f2eb8efd9f947b054d53561a652238e67",
+    "file": "00-ready.zip"
+  },
+  {
+    "branch": "flask-01-flask",
+    "commit": "e9f61648899e850614a8f77a7bc26448b10621b1",
+    "file": "01-flask.zip"
+  },
+  {
+    "branch": "flask-02-pytest",
+    "commit": "d0f2d8d098d1e1ae351b97c8a97b7a7ede87eef3",
+    "file": "02-pytest.zip"
+  },
+  {
+    "branch": "flask-03-route",
+    "commit": "10132624f1b7caed5ccd85af9208f3a2246642e7",
+    "file": "03-route.zip"
+  },
+  {
+    "branch": "flask-04-template",
+    "commit": "73a594f1af530b585b98e8dc7d4b1121792e4b27",
+    "file": "04-template.zip"
+  },
+  {
+    "branch": "flask-05-name",
+    "commit": "e1fe656dddffe1b1bc051201dd3e99fa08fc66f9",
+    "file": "05-name.zip"
+  },
+  {
+    "branch": "flask-06-fixtures",
+    "commit": "68ed5737359cad76c3022e242da7f82a7bb336b5",
+    "file": "06-fixtures.zip"
+  },
+  {
+    "branch": "flask-07-test-quality",
+    "commit": "db975185d30dff9e374321779c84fbfd0857a1a7",
+    "file": "07-test-quality.zip"
+  },
+  {
+    "branch": "flask-08-json",
+    "commit": "83bc76e7fb0a565fad62fe128fc71340976c6138",
+    "file": "08-json.zip"
+  },
+  {
+    "branch": "flask-09-list",
+    "commit": "4e6abeb9fee84c713d197c9857456b0289556154",
+    "file": "09-list.zip"
+  },
+  {
+    "branch": "flask-10-create",
+    "commit": "86c3698c4f8be0b5a6b3538262cab84cf8072c58",
+    "file": "10-create.zip"
+  },
+  {
+    "branch": "flask-11-crud",
+    "commit": "27f52c8ff153a98a8849258f2b652807f097431c",
+    "file": "11-crud.zip"
+  },
+  {
+    "branch": "flask-12-package",
+    "commit": "375908eb277d7b769ee6ccff2f93afce296315fd",
+    "file": "12-package.zip"
+  },
+  {
+    "branch": "flask-13-sqlite",
+    "commit": "ba24d80e82762f841044d5a6b9b4467009001601",
+    "file": "13-sqlite.zip"
+  },
+  {
+    "branch": "flask-14-cors",
+    "commit": "11644e016a2b5b712dd205e15c80780349de3834",
+    "file": "14-cors.zip"
+  },
+  {
+    "branch": "flask-15-marshmallow",
+    "commit": "1d37e5f5e89b053380c7f0b05550f3f3128f08ab",
+    "file": "15-marshmallow.zip"
+  },
+  {
+    "branch": "flask-16-blueprint",
+    "commit": "c2ddc235fd7ed2b8754dbb1198e50440cbb73188",
+    "file": "16-blueprint.zip"
+  },
+  {
+    "branch": "flask-17-openapi",
+    "commit": "c666073d60c7af3fe1f91359067113b22decb79d",
+    "file": "17-openapi.zip"
+  },
+  {
+    "branch": "fastapi-00-app",
+    "commit": "f08bad58149bf6fda5abfc978ca4312d94bf7aef",
+    "file": "fastapi-00-app.zip"
+  },
+  {
+    "branch": "fastapi-01-create",
+    "commit": "0d463bea39c07385f066fd6139f9e04c47809aca",
+    "file": "fastapi-01-create.zip"
+  },
+  {
+    "branch": "fastapi-02-crud",
+    "commit": "e3b9a76d6b14bc6c34ecbb0983eb129467a02e0f",
+    "file": "fastapi-02-crud.zip"
+  },
+  {
+    "branch": "fastapi-03-sqlmodel",
+    "commit": "14de7c07f6f8ab6359deffeb5ab52a9b34127907",
+    "file": "fastapi-03-sqlmodel.zip"
+  },
+  {
+    "branch": "canvas-01-draw",
+    "commit": "6a744d092cc1e79520b08dfb56b40d4d405fbab8",
+    "file": "canvas-01-draw.zip"
+  },
+  {
+    "branch": "canvas-02-animation",
+    "commit": "f5709bce7e614408029f16135d58bdac935e07f6",
+    "file": "canvas-02-animation.zip"
+  },
+  {
+    "branch": "canvas-03-input",
+    "commit": "4871a82fe41b8b32ce7f7da0157e79e452efc5ca",
+    "file": "canvas-03-input.zip"
+  },
+  {
+    "branch": "canvas-04-game",
+    "commit": "674e80295c553f7b77dc8a755764e75d281ffdde",
+    "file": "canvas-04-game.zip"
+  },
+  {
+    "branch": "nest-00-app",
+    "commit": "e65c1a2a5fd81b93e8374e566c1de11cf6cef012",
+    "file": "nest-00-app.zip"
+  },
+  {
+    "branch": "nest-01-memory",
+    "commit": "1f89d1909bba785044e78ae3764a2734cbdc3090",
+    "file": "nest-01-memory.zip"
+  },
+  {
+    "branch": "nest-02-sqlite",
+    "commit": "8768f6288004d837471a36196f33886f62198952",
+    "file": "nest-02-sqlite.zip"
+  },
+  {
+    "branch": "todo-client",
+    "commit": "5ce55aec20650e3d4aa164c919861c00669efcb1",
+    "file": "todo-client.zip"
+  },
+  {
+    "branch": "game-starter",
+    "commit": "11b64235f6aeedde2cfe65b1a99a00f5ccfc5464",
+    "file": "game-starter.zip"
+  },
+  {
+    "branch": "game-reference",
+    "commit": "a7a5b935176b5989fd99103690f9e3b07a5d2c71",
+    "file": "game-reference.zip"
+  },
+  {
+    "branch": "canvas-05-three",
+    "commit": "6c78f04600670156cecc0834931564398719ad14",
+    "file": "three-demo.zip"
+  }
+]

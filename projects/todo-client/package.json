@@ -1,0 +1,13 @@
+{
+  "name": "ecm26-todo-client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "vite build",
+    "test": "node --test src/*.test.js"
+  },
+  "engines": {"node": ">=22.12"},
+  "dependencies": {"react": "19.2.4", "react-dom": "19.2.4"},
+  "devDependencies": {"vite": "7.3.1"}
+}

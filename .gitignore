@@ -1,0 +1,15 @@
+/_reference/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+dist-options/
+output/
+.env
+.env.local
+instance/
+/slides/public/checkpoints/ecm26-flask-checkpoints.bundle
+.DS_Store
