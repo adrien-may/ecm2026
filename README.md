@@ -1,6 +1,6 @@
-# flask-11-crud
+# flask-12-package
 
-CRUD en mémoire avec validation et erreurs HTTP.
+Déplacer le backend dans le package todo sans changer le comportement.
 
 ## Lancer ce checkpoint
 
@@ -9,14 +9,14 @@ Ouvrir ce dossier dans l’éditeur. Lancer depuis la racine qui contient `pypro
 ```sh
 uv sync --locked
 uv run pytest -q
-uv run flask --app app:create_app run --debug --port 5001
+uv run flask --app todo run --debug --port 5001
 ```
 
 Résultat attendu : **31 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
-`app.py` est un module autonome ; aucun package todo à ce stade. `tests/__init__.py` existe et reste vide. Les fichiers de tests sont directement dans `tests/`, y compris `conftest.py` et `test_template_signal.py`. Aucun `__init__.py` à la racine du projet, dans `templates/` ou dans `instance/`.
+`todo/__init__.py` contient la factory ; `todo/models.py`, `todo/schemas.py` et `todo/tasks.py` arrivent aux étapes 13, 15 et 16. `tests/__init__.py` existe et reste vide. Les fichiers de tests sont directement dans `tests/`, y compris `conftest.py` et `test_template_signal.py`. Aucun `__init__.py` à la racine du projet, dans `templates/` ou dans `instance/`.
 
 `captured_templates` écoute `template_rendered` pour cette app pendant le test, puis se désabonne dans finally. Le test vérifie le template choisi et son context ; il ne remplace pas les assertions sur le HTML reçu. Blinker est déjà une dépendance de Flask.
 

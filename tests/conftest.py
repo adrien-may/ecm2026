@@ -1,6 +1,6 @@
 from flask import template_rendered
 import pytest
-from app import create_app
+from todo import create_app
 
 
 @pytest.fixture
