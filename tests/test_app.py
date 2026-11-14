@@ -38,3 +38,10 @@ def test_page_matches_its_template(app, client):
     template = app.jinja_env.get_template("hello.html")
     expected = template.render(name="Samira")
     assert response.get_data(as_text=True) == expected
+
+
+def test_api_returns_json(client):
+    response = client.get("/api/bonjour?name=Samira")
+    assert response.status_code == 200
+    assert response.mimetype == "application/json"
+    assert response.json == {"message": "Bonjour Samira"}

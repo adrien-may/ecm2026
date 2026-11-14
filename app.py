@@ -9,4 +9,9 @@ def create_app():
         name = request.args.get("name", "ECM")
         return render_template("hello.html", name=name)
 
+    @app.get("/api/bonjour")
+    def hello_json():
+        name = request.args.get("name", "ECM")
+        return {"message": f"Bonjour {name}"}
+
     return app

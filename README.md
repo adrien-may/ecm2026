@@ -1,6 +1,6 @@
-# flask-07-test-quality
+# flask-08-json
 
-Parametrize, test de comparaison, template signal et régression volontaire.
+La page SSR et la route JSON coexistent.
 
 ## Lancer ce checkpoint
 
@@ -12,7 +12,7 @@ uv run pytest -q
 uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **7 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **8 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
@@ -23,7 +23,3 @@ Résultat attendu : **7 passed**. La page `/bonjour?name=Samira` reste disponibl
 Les étapes 09–12 stockent les tasks en mémoire. À partir de 13, `init-db` crée les tables absentes dans `instance/flask-todo.sqlite`, sans effacer les données existantes. Les tests utilisent des fichiers temporaires isolés. Aux étapes 15 et 16, les mêmes 33 tests restent verts.
 
 Pour reprendre, décompresser un ZIP dans un nouveau dossier ou créer un worktree depuis le bundle. Ne pas écraser un travail en cours. Après tout changement de checkpoint, relancer `uv sync --locked`.
-
-## Expérience de régression
-
-Dans `templates/hello.html`, remplacer `<h1>Bonjour {{ name }}</h1>` par `<h1>Bonjour</h1>`. `uv run pytest -q -k matches_its_template` et `uv run pytest -q -k uses_expected_template` restent verts (1 passed chacun). `uv run pytest -q -k displays_requested_name` donne 2 failed : le HTML ne satisfait plus le besoin du visiteur. Restaurer la ligne initiale pour retrouver 7 passed.
