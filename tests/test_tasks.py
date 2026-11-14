@@ -40,6 +40,46 @@ def test_duplicate_titles_are_allowed(client):
 
 
 
+def test_partial_update_and_delete_preserve_other_task(client):
+    first = client.post("/tasks/", json={"title": "Lire"}).json
+    second = client.post("/tasks/", json={"title": "Tester"}).json
+    url = f"/tasks/{first['id']}"
+    assert client.get(url).json == first
+    updated = client.patch(url, json={"done": True})
+    assert updated.status_code == 200
+    assert updated.json == {**first, "done": True}
+    renamed = client.patch(url, json={"title": " Relire "})
+    assert renamed.json == {**first, "title": "Relire", "done": True}
+    response = client.delete(url)
+    assert response.status_code == 204
+    assert response.data == b""
+    assert client.get(url).status_code == 404
+    assert client.get("/tasks/").json == [second]
+
+
+
+@pytest.mark.parametrize("method", ["get", "patch", "delete"])
+def test_missing_task(client, method):
+    response = getattr(client, method)("/tasks/999")
+    assert response.status_code == 404
+    assert response.is_json
+
+
+
+@pytest.mark.parametrize("fields", [
+    {}, {"done": "false"}, {"done": 0}, {"done": None},
+    {"title": ""}, {"id": 12}, {"done": True, "title": " "},
+])
+def test_invalid_patch_does_not_partially_modify_task(client, fields):
+    task = client.post("/tasks/", json={"title": "Lire"}).json
+    url = f"/tasks/{task['id']}"
+    response = client.patch(url, json=fields)
+    assert 400 <= response.status_code < 500
+    assert response.is_json
+    assert client.get(url).json == task
+
+
+
 def test_json_and_method_errors(client):
     malformed = client.post("/tasks/", data="{", content_type="application/json")
     assert malformed.status_code == 400

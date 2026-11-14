@@ -4,17 +4,23 @@ from flask import Flask, abort, render_template, request
 from werkzeug.exceptions import HTTPException
 
 
-def read_fields():
+def read_fields(*, partial=False):
     data = request.get_json()
     if not isinstance(data, dict):
         abort(400, description="Expected a JSON object")
-    if set(data) != {"title"}:
-        abort(400, description="Expected only title")
-    if not isinstance(data["title"], str):
-        abort(400, description="title must be a string")
-    data["title"] = data["title"].strip()
-    if not 1 <= len(data["title"]) <= 255:
-        abort(400, description="title must contain 1 to 255 characters")
+    allowed = {"title", "done"} if partial else {"title"}
+    if not data or set(data) - allowed:
+        abort(400, description="Unexpected or missing fields")
+    if not partial and "title" not in data:
+        abort(400, description="title is required")
+    if "title" in data:
+        if not isinstance(data["title"], str):
+            abort(400, description="title must be a string")
+        data["title"] = data["title"].strip()
+        if not 1 <= len(data["title"]) <= 255:
+            abort(400, description="title must contain 1 to 255 characters")
+    if "done" in data and type(data["done"]) is not bool:
+        abort(400, description="done must be a boolean")
     return data
 
 
@@ -56,5 +62,26 @@ def create_app():
         tasks[next_id] = task
         next_id += 1
         return task, 201
+
+    def find_task(task_id):
+        if task_id not in tasks:
+            abort(404, description="Task not found")
+        return tasks[task_id]
+
+    @app.get("/tasks/<int:task_id>")
+    def get_task(task_id):
+        return find_task(task_id)
+
+    @app.patch("/tasks/<int:task_id>")
+    def update_task(task_id):
+        task = find_task(task_id)
+        task.update(read_fields(partial=True))
+        return task
+
+    @app.delete("/tasks/<int:task_id>")
+    def delete_task(task_id):
+        find_task(task_id)
+        del tasks[task_id]
+        return "", 204
 
     return app

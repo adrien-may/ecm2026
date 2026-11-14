@@ -1,6 +1,6 @@
-# flask-10-create
+# flask-11-crud
 
-Créer et valider une task, puis relire la collection.
+CRUD en mémoire avec validation et erreurs HTTP.
 
 ## Lancer ce checkpoint
 
@@ -12,7 +12,7 @@ uv run pytest -q
 uv run flask --app app:create_app run --debug --port 5001
 ```
 
-Résultat attendu : **20 passed**. La page `/bonjour?name=Samira` reste disponible.
+Résultat attendu : **31 passed**. La page `/bonjour?name=Samira` reste disponible.
 
 ## Fichiers et packages
 
