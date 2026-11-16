@@ -4,7 +4,7 @@ Une démo de cinq minutes après le jeu Canvas : voir le même jeu en volume, ch
 
 ## Lancer la démo
 
-Extraire `three-demo.zip` à part et ouvrir un terminal dans le dossier `three-demo/`, celui qui contient le fichier fourni `package.json`.
+Extraire `three-demo.zip` à part et ouvrir un terminal dans le dossier `canvas-05-three/`, celui qui contient le fichier fourni `package.json`.
 
 ```sh
 npm ci
