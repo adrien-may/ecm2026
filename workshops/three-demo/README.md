@@ -1,6 +1,10 @@
-# Démo optionnelle · Le rendu 3D
+# Ouverture 3D · Déplacer la caméra
 
-À utiliser seulement si le groupe a de l'avance. Cette démo ajoute Three.js à un projet séparé ; il n'est pas nécessaire pour l'atelier Canvas ou le projet final.
+Une démo de cinq minutes après le jeu Canvas : voir le même jeu en volume, changer le point de vue et reprendre la partie. Le projet est fourni dans le checkpoint `canvas-05-three` ; aucune intégration Three.js n’est à écrire pendant le cours.
+
+## Lancer la démo
+
+Extraire `three-demo.zip` à part et ouvrir un terminal dans le dossier `canvas-05-three/`, celui qui contient le fichier fourni `package.json`.
 
 ```sh
 npm ci
@@ -8,24 +12,16 @@ npm test
 npm run dev
 ```
 
-Ouvrir `http://127.0.0.1:5176`. Cliquer dans le jeu, utiliser les flèches et espace. Reprendre après une perte de focus. `npm run build` produit la version autonome ; 10 tests vérifient la simulation et les controls.
+Ouvrir http://127.0.0.1:5176. Mettre en pause, déplacer le slider **Point de vue**, puis reprendre. Cliquer dans le jeu pour utiliser les flèches et espace. Après une perte de focus, cliquer sur Reprendre. Le slider fonctionne aussi avec les flèches lorsqu’il a le focus.
 
-`game.js` conserve des coordonnées et collisions 2D. `main.js` les affiche avec une `Scene`, une `OrthographicCamera`, des `Mesh`, une géométrie partagée et des matériaux éclairés. La caméra inclinée montre le volume. Ce changement de rendu ne crée pas une physique 3D.
+Comparer les deux vues pendant la pause : les objets gardent leurs positions et le score reste le même. Reprendre et tirer pour retrouver le jeu connu. La caméra ne bouge que lorsqu’on déplace le slider.
 
-Question à faire expliquer : quelle responsabilité change et quelles assertions restent valables ? Comparer le rectangle Canvas et le Mesh. Inspecter le cleanup : boucle annulée, géométrie, matériaux et renderer libérés. Aucun asset distant ni texture à télécharger pendant la démo.
+## Se repérer dans le code fourni
 
-## Objectif et exercice de caméra (10–15 minutes, optionnel)
+- `src/game.js` : les mêmes règles et collisions que dans le jeu Canvas, sur un plan.
+- `src/main.js` : le rendu Three.js, les volumes éclairés et la caméra. `updateCamera()` déplace et oriente la caméra à partir du slider.
+- `index.html` : le slider et les boutons de la démo.
 
-Cette démo enseigne un changement de représentation, pas une simulation 3D. Les positions et collisions restent dans game.js en 2D ; main.js transforme l’état en volumes éclairés. C’est un rendu 3D avec un gameplay en 2D (2.5D). Une simulation 3D exigerait de nouveaux déplacements, collisions et tests sur trois axes.
+Les **10 tests** vérifient les règles et les controls. Vérifier dans le navigateur que le slider change bien l’image, y compris en pause, sans changer le score. `npm run build` produit la version autonome. Aucun asset distant ni texture à télécharger pendant la démo.
 
-Dans le fichier existant `src/main.js`, remplacer la déclaration de camera et ses deux lignes de position/orientation par :
-
-```javascript
-const camera = new THREE.PerspectiveCamera(
-  50, WIDTH / HEIGHT, 1, 2000,
-);
-camera.position.set(300, -300, 650);
-camera.lookAt(0, 0, 0);
-```
-
-50 est le field of view vertical en degrés, WIDTH/HEIGHT l’aspect ratio, 1 et 2000 les distances de clipping. Comparer au rendu OrthographicCamera initial : les volumes et tailles apparentes changent avec la distance. Les mêmes 10 tests restent verts (`npm test`), car aucune règle du jeu n’a changé. Expliquer pourquoi la caméra ne change pas la collision ; cela montre la séparation entre état, règles et rendu. Pour revenir, reprendre les trois lignes du checkpoint. Aucun nouveau fichier ou asset externe n’est nécessaire.
+Le rendu est en 3D ; les règles du jeu restent sur un plan. Cette ouverture montre qu’on peut changer la représentation d’un jeu déjà fonctionnel. Ensuite, reprendre `game-starter/` pour construire l’aller-retour du score avec le backend ; la démo reste un projet séparé.

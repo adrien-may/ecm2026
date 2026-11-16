@@ -1,8 +1,20 @@
-# Vérifications du kit · 14 novembre 2026
+# Vérifications du kit · 16 novembre 2026
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
-## Publication GitHub · état actuel
+## Ouverture 3D dans le parcours commun · état actuel
+
+Le support principal contient **259 slides** ; les approfondissements en contiennent **30**. Les slides **212–213** ramènent une ouverture 3D de cinq minutes après Canvas. Les quatre anciennes slides techniques de l’option 3D sont remplacées par une comparaison visuelle et une démo prête à lancer. La carte du jour 2 et le support optionnel sont cohérents avec ce parcours.
+
+Le slider Point de vue déplace la caméra à la souris ou au clavier, y compris pendant la pause. Les deux captures proviennent exactement du même état du jeu. Les controls restent visibles à côté du Canvas. Pause, reprise et tirs en perspective ont été vérifiés dans le navigateur ; les positions et le score restent inchangés pendant un changement de vue en pause. Sources Three.js r180 consultées via Context7 : [PerspectiveCamera](https://github.com/mrdoob/three.js/blob/r180/docs/api/en/cameras/PerspectiveCamera.html) et [position/lookAt](https://github.com/mrdoob/three.js/blob/r180/manual/en/scenegraph.html).
+
+Le ZIP a été extrait dans un dossier temporaire : installation propre, **10 tests** et build passent. Ses fichiers correspondent à workshops/three-demo/ et à la branche canvas-05-three du bundle. Le dossier réellement extrait est canvas-05-three/ ; la slide et le README l’indiquent. game.js reste identique au jeu Canvas. Le checkpoint reçoit de nouveaux commits ; les 32 autres checkpoints ne changent pas.
+
+Les deux builds des slides passent. Les quatre slides modifiées ont été inspectées dans le navigateur puis rendues depuis les PDF finaux. Les **289 titres** correspondent aux sources ; aucun caractère ne sort des pages. Les **37 liens** du PDF principal et les **7 liens** du support optionnel couvrent toujours les **33 checkpoints**. Résultats et captures : output/three-opening-review/. La nouvelle release est fall-2026-r2 ; le kit et les deux PDF sont actualisés.
+
+Les suites des autres projets n’ont pas été relancées. _reference/ reste inchangé. Les blocs de 35 minutes d’intégration et de 100 minutes de réalisation sont préservés ; les cinq minutes de 3D remplacent cinq minutes de la revue de fin de jour 2.
+
+## Publication GitHub · état précédent (14 novembre 2026)
 
 Le dépôt public est https://github.com/adrien-may/ecm2026. La branche main contient les supports ; les 33 branches de checkpoints conservent leurs commits. Les PDF et le kit sont distribués dans la release fall-2026. Aucun code applicatif ni historique de checkpoint n’a été réécrit pour cette publication.
 

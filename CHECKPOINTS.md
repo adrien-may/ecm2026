@@ -38,7 +38,7 @@ Chaque ZIP contient un projet complet et son lockfile. Les noms de branches ouvr
 | [`game-reference`](https://github.com/adrien-may/ecm2026/tree/game-reference) | [ZIP](slides/public/checkpoints/game-reference.zip) |
 | [`canvas-05-three`](https://github.com/adrien-may/ecm2026/tree/canvas-05-three) | [ZIP](slides/public/checkpoints/three-demo.zip) |
 
-Les familles Flask, FastAPI, Canvas et NestJS suivent chacune une progression. Les branches game-starter et game-reference sont deux états explicitement différents du projet. La démo Three.js reste optionnelle.
+Les familles Flask, FastAPI, Canvas et NestJS suivent chacune une progression. Les branches game-starter et game-reference sont deux états explicitement différents du projet. La démo Three.js ouvre brièvement vers le rendu 3D après Canvas ; son intégration au projet final reste optionnelle.
 
 ## Vérifier les archives
 

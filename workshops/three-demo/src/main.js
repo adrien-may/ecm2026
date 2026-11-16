@@ -10,9 +10,15 @@ renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.setSize(WIDTH, HEIGHT, false);
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#102b29');
-const camera = new THREE.OrthographicCamera(-390, 390, 244, -244, 1, 2000);
-camera.position.set(0, -240, 650);
-camera.lookAt(0, 0, 0);
+const camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 1, 2000);
+const viewpoint = document.querySelector('#viewpoint');
+function updateCamera() {
+  const offset = Number(viewpoint.value) / 100;
+  camera.position.set(330 * offset, -220 * offset, 650);
+  camera.lookAt(0, 0, 0);
+}
+viewpoint.addEventListener('input', updateCamera);
+updateCamera();
 scene.add(new THREE.AmbientLight(0xffffff, 2));
 const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(-200, 300, 500);
@@ -48,6 +54,7 @@ document.querySelector('#resume').onclick = () => game.resume();
 document.querySelector('#pause').onclick = () => game.pause();
 function cleanup() {
   game.destroy();
+  viewpoint.removeEventListener('input', updateCamera);
   geometry.dispose();
   materials.forEach(material => material.dispose());
   renderer.dispose();

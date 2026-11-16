@@ -132,6 +132,10 @@ src: ./chapters/04-canvas.md
 ---
 
 ---
+src: ./chapters/04b-three.md
+---
+
+---
 src: ./chapters/05-game-project.md
 ---
 

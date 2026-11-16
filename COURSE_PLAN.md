@@ -1,6 +1,6 @@
 # ECM 2026: three-day backend and web course
 
-Implemented course plan, updated 14 November 2026. The three-day materials are complete for instructor review; institutional grading and submission choices remain explicitly identified below.
+Implemented course plan, updated 16 November 2026. The three-day materials are complete for instructor review; institutional grading and submission choices remain explicitly identified below.
 
 ## Agreed constraints
 
@@ -14,14 +14,14 @@ Implemented course plan, updated 14 November 2026. The three-day materials are c
 - Coding agents are allowed. Assess understanding and engineering decisions, not prompting ability.
 - Include a concise architecture section with diagrams and tradeoffs.
 - The original slides are in [Google Slides](https://docs.google.com/presentation/d/18zrTpdve2sIDFO0LlsQsUEsND7sDr9xka69duHYLBsY/edit). The reviewed snapshot is the 66-page PDF supplied by the instructor. Use Slidev as the editable source for the updated course, following the instructor's preference.
-- FastAPI is the common project backend. NestJS, SQLModel and 3D are separate optional workshops. Final submission deadline remains undecided.
+- FastAPI is the common project backend. NestJS and SQLModel are separate optional workshops; a five-minute 3D opening follows Canvas in the main deck. Final submission deadline remains undecided.
 - Language: French slides and student briefs, with technical terms and code kept in English (including headers, body, request and response). Discussion and this planning document remain in English.
 
 ## Recommendation
 
 Keep the progression **Flask HTML and Jinja, Flask JSON API, FastAPI replacement, Canvas game, game backend**. Give each transition an observable purpose.
 
-Keep one backend stack throughout day 2: FastAPI, Pydantic, SQLAlchemy and SQLite. Show the game and leaderboard target before the todo transfer. Move SQLModel, 3D and NestJS to a separate optional deck so they do not interrupt integration. Their complete examples and checkpoints remain available.
+Keep one backend stack throughout day 2: FastAPI, Pydantic, SQLAlchemy and SQLite. Show the game and leaderboard target before the todo transfer. Keep a five-minute, two-slide 3D opening after Canvas, using the prepared game and a camera slider. SQLModel and NestJS stay in the separate optional deck. Their complete examples and checkpoints remain available.
 
 FastAPI is a different Python framework, not a different language. NestJS introduces TypeScript and a more prescribed application structure.
 
@@ -79,15 +79,16 @@ FastAPI now begins on day 2, after students have built, tested, persisted and co
 | 105 | FastAPI discovery and todo exercise | The same React client works against the new API |
 | 15 | Debrief and recover to fastapi-02-crud | 25 tests pass; connect task CRUD to score submission |
 | 90 | Guided Canvas 2D, then React lifecycle | A playable interaction ends with a score |
+| 5 | Same game in 3D: move the camera | Compare two views, then return to the score |
 | 35 | Guided integration using game-starter | POST test fails, implementation passes, React submits and reloads |
 | 100 | Individual project development | Extend one working end-to-end interaction |
-| 20 | Progress review and recovery | Record the next smallest deliverable for day 3 |
+| 15 | Progress review and recovery | Record the next smallest deliverable for day 3 |
 
 Total: 375 minutes. FastAPI remains the backend through Canvas and integration. The score starter deliberately uses the same SQLAlchemy configuration as the todo checkpoint; there is no ORM switch to undo.
 
 Assessment 1 follows the guided FastAPI introduction. No evening setup is assumed. The game target is introduced before this exercise so students know why they are learning another way to implement the familiar contract.
 
-The optional deck, slides/options.md, contains three independent workshops: SQLModel (about 30 minutes), 2.5D rendering (10–15 minutes), and NestJS (about 60 minutes). These durations are outside the common 375-minute path. Open them only after the core result works or in another session; they must not consume the protected integration block.
+The optional deck, slides/options.md, contains two independent workshops: SQLModel (about 30 minutes) and NestJS (about 60 minutes). Those two workshops are outside the common 375-minute path. The five-minute 3D opening is included in that path. Open them only after the core result works or in another session; they must not consume the protected integration block.
 
 ### Day 3: architecture, completion and explanation
 
@@ -197,13 +198,14 @@ References: [Slidev guide](https://sli.dev/guide/), [syntax and presenter notes]
 | Flask schemas and structure | 55 | Manual serialization, load/dump diagram, hooks, native Blueprint, Flask-smorest and OpenAPI, final review |
 | Day 2 orientation and FastAPI transfer | 23 | Game target, three milestones, todo contract and transition to scores |
 | Canvas workshop | 24 | Drawing, time, input, collisions, state and React |
+| Short 3D opening | 2 | Same paused game from two viewpoints, ready-made camera slider, return to the score |
 | Game integration and project | 14 | Scope, exact folders, POST test/implementation, frontend integration and progress review |
 | Architecture | 13 | Modules, layers, hexa, clean, services, events and CQRS |
 | Beyond CRUD | 14 | Authentication/authorization, sessions, durable jobs and cron, webhooks, cache, MCP and scenario discussion |
 | Project presentation and conclusion | 5 | Completion, reproducibility, useful tests before the presentation, then a course synthesis |
-| Separate optional deck | 34 | SQLModel, 2.5D rendering and NestJS with their checkpoints |
+| Separate optional deck | 30 | SQLModel and NestJS with their checkpoints |
 
-The main deck has 257 slides; the optional deck has 34. Main sequence: day 1 (1–164), day 2 (165–225), day 3 (226–257). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
+The main deck has 259 slides; the optional deck has 30. Main sequence: day 1 (1–164), day 2 (165–227), day 3 (228–259). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
 
 Suggested new French slide titles include “Une requête de bout en bout”, “Le même contenu en HTML et en JSON”, “Ce que ce test garantit”, “Une base de test indépendante”, “Le même contrat avec FastAPI”, “Types et validation”, “Une image à chaque frame”, “Le serveur peut-il croire ce score ?” and “Lire et écrire avec CQRS”.
 
@@ -237,7 +239,7 @@ Progress through eight visible results:
 
 Start with JavaScript for the Canvas lesson. React can own menus and displayed scores while the game loop updates its own state. Teach cancellation and event cleanup, pause/resume timing and preventing unwanted page scrolling. Keep collision tests small and deterministic. Cover labels, visible instructions and keyboard access for the surrounding interface.
 
-Show a prepared 3D version for approximately ten minutes: same gameplay and score contract, different renderer with a camera and meshes. Three.js 0.180.0 is pinned in the supplied project. Screenshots of the orthographic and perspective views provide a fallback and support the camera exercise. Do not teach raw WebGL or make 3D necessary for a strong grade.
+Show the prepared 3D game for five minutes, in two slides directly after Canvas. A slider moves the camera around the same game; pause to compare exactly the same state. Three.js 0.180.0 is already pinned in the supplied project. The paired front/angled screenshots provide a fallback. Keep this visual: no projection parameters, renderer implementation or new code to copy. Return explicitly to game-starter/ and the score backend.
 
 ## Final project and assessments
 
@@ -333,7 +335,7 @@ Prefer four maintained repositories over recreating every historical repository 
 | Proposed repository | Content | Existing material |
 | --- | --- | --- |
 | `ecm26` | Course index, briefs, rubric, contracts, Flask/FastAPI todo workshops and reference React client | `ecm2025`, `react-todo`, selected score examples |
-| `ecm26-canvas` | Progressive JavaScript Canvas steps, React integration, optional prepared 3D comparison | `space-invaders-ecm25` |
+| `ecm26-canvas` | Progressive JavaScript Canvas steps, React integration, short prepared 3D comparison | `space-invaders-ecm25` |
 | `ecm26-game-starter` | Runnable React shell and chosen supported backend starter, with a first meaningful test | New |
 | `ecm26-game-reference` | Small complete game meeting the published rubric | Simplified existing Space Invaders plus matching backend |
 
@@ -366,13 +368,13 @@ Provide a pre-course environment checklist, known-good checkpoints, downloadable
 
 ## Current implementation status
 
-The three-day delivery is implemented: **257 main slides and 34 optional slides**, **33 checkpoint branches and ZIPs**, a portable Git bundle, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
+The three-day delivery is implemented: **259 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, a portable Git bundle, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
 
 - Day1: Flask introduced progressively, SSR and the weak/useful test comparison retained, then task CRUD, a separate package refactor, SQLite, isolated tests and React integration, followed by Marshmallow schemas, Blueprint organization and Flask-smorest/OpenAPI.
-- Day2: announce the game target, transfer the todo to FastAPI, create the Canvas interaction, and integrate scores using the same FastAPI/SQLAlchemy stack. SQLModel, Three.js and NestJS have a separate optional deck.
+- Day2: announce the game target, transfer the todo to FastAPI, create the Canvas interaction, and integrate scores using the same FastAPI/SQLAlchemy stack. A five-minute 3D opening follows Canvas; SQLModel and NestJS have a separate optional deck.
 - Day3: architecture through the same game, including hexa and clean; other backend responsibilities (authentication, jobs/cron, webhooks, cache, MCP), then implementation, reproducibility, presentation and a synthesis of the three days. No numerical final-project grid or per-person time limit.
 - Exact package marker placement is shown in the opening, Flask package refactor, FastAPI tree and game backend tree. No marker at the project root, in templates or in frontend folders.
 - Clean checkpoint installation, intentional red transitions, regression behavior, bundle clone/worktree recovery, browser workflows and PDF rendering were checked. Detailed results are in docs/verification.md.
-- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
+- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026-r2 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
 - No instructor content approval was assumed. NestJS is in the separate optional support; the baseline is a submission freeze before day3 orals, with the after-course alternative documented.
 - No remote repository was published. The original Google Slides and _reference/ remain unchanged. The instructor checkout retains its original uncommitted state; course checkpoint refs are separate student project snapshots.

@@ -24,7 +24,7 @@ Nous gardons **FastAPI + SQLAlchemy** jusqu’à la fin du projet commun.
 | Jeu avec Canvas | Produire un résultat à conserver | Une partie finit avec un score |
 | Classement avec FastAPI | Relier interface et persistance | Le score revient après redémarrage |
 
-SQLModel, 3D et NestJS sont disponibles dans le **support d’approfondissements**, à ouvrir séparément.
+Une courte démo 3D prolonge Canvas. SQLModel et NestJS sont disponibles dans le **support d’approfondissements**, à ouvrir séparément.
 
 <!--
 Les options sont des parcours complets conservés pour prolonger le cours. Elles ne sont ni des étapes requises ni du contenu à intercaler avant que le trajet commun fonctionne. Protéger le temps d’intégration et de réalisation.

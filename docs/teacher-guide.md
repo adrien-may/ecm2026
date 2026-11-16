@@ -24,11 +24,13 @@ Le bloc de 105 minutes inclut la découverte de FastAPI et l’exercice todo. Pr
 
 Canvas occupe 90 minutes, montage React compris. Avant de passer au projet, faire observer une fin de partie et son score. Garder le dossier game-starter extrait à cette étape.
 
+Après Canvas, consacrer cinq minutes aux deux slides 3D (212–213). Préparer la démo avant la séance, mettre le jeu en pause et déplacer le slider Point de vue. Les deux captures montrent le même instant. Éviter les paramètres de caméra et le code de rendu : l’objectif est de voir une autre représentation du jeu. Revenir explicitement à game-starter/ pour le score.
+
 Consacrer 35 minutes à l’intégration guidée : repérer backend/ et frontend/, lancer les deux terminaux, écrire le test POST puis GET, constater 405, ajouter la route, puis construire le formulaire et les états de sauvegarde. La référence complète a 11 tests backend et 14 frontend ; le seul test ajouté au starter en donne 2 côté backend.
 
-Protéger 100 minutes de réalisation personnelle puis 20 minutes de revue. Limiter le projet à une mécanique et une ressource stockée.
+Protéger 100 minutes de réalisation personnelle puis 15 minutes de revue. Limiter le projet à une mécanique et une ressource stockée.
 
-SQLModel, 3D et NestJS sont dans slides/options.md, ouverts avec npm run slides:options -- --port 3032. Ils sont indépendants, hors du budget commun. Le refactor SQLModel (30 minutes) conserve model_validate et sqlmodel_update ; la 3D compare les caméras (10–15 minutes) ; NestJS remplace le backend connu (60 minutes). Ne pas les intercaler avant que l’intégration fonctionne.
+SQLModel et NestJS sont dans slides/options.md, ouverts avec npm run slides:options -- --port 3032. Ils sont indépendants, hors du budget commun. Le refactor SQLModel (30 minutes) conserve model_validate et sqlmodel_update ; NestJS remplace le backend connu (60 minutes). Ne pas les intercaler avant que l’intégration fonctionne.
 
 ## Jour 3
 
@@ -50,10 +52,10 @@ FastAPI est le parcours commun. Les approfondissements sont séparés. Le gel de
 
 La version actuelle du client historique inspecté utilise GET/POST/PATCH/DELETE, pas PUT. Vérifier ce point avec l'enseignant des trois jours frontend avant la séance. Le client de référence du kit permet une répétition indépendante.
 
-Si le temps manque : retirer la 3D, réduire les effets et menus du jeu, puis limiter le catalogue d'architecture. Garder les tests utiles, le SSR, les checkpoints, la persistance, l'intégration et l'explication individuelle.
+Si le temps manque : montrer les captures de la courte ouverture 3D, réduire les effets et menus du jeu, puis limiter le catalogue d’architecture. Garder les tests utiles, le SSR, les checkpoints, la persistance, l'intégration et l'explication individuelle.
 
 La fixture `captured_templates` revient après les fixtures, avec connect/yield/finally/disconnect expliqués. Faire prédire les trois observations après suppression du prénom dans le template : comparaison verte, signal vert, assertions de prénom rouges. Pour la serialization, exécuter d’abord la concaténation volontairement cassée dans un shell, puis json.dumps, avant le schema. Le passage true/True appartient au parse JSON.
 
 La version intégralement saisie du jour 1 représente désormais 425 minutes hors pauses. Voir COURSE_PLAN.md pour la variante 375 minutes avec certains déplacements de code lus et repris depuis un checkpoint. Ne pas masquer les nouveaux fichiers ni accélérer silencieusement les explications de l’introduction.
 
-Les captures Canvas restent dans le parcours commun. Les captures 3D et le refactor SQLModel restent disponibles dans les approfondissements.
+Les captures Canvas et 3D sont dans le parcours commun. La démo 3D conserve les mêmes règles, sans changement de backend ni de fichier à recopier. SQLModel et NestJS constituent les approfondissements.

@@ -1,7 +1,12 @@
-<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ECM · 3D optionnelle</title></head><body><main>
-<p class="eyebrow">ECM · DÉMO OPTIONNELLE</p><h1>Mêmes règles, autre rendu.</h1>
-<p>La simulation reste en 2D. Three.js affiche les joueurs, cibles et tirs en volume avec une caméra et des lumières.</p>
+<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ECM · Le jeu en volume</title></head><body><main>
+<p class="eyebrow">ECM · OUVERTURE 3D</p><h1>Le même jeu, un autre point de vue</h1>
+<p>Déplacer la caméra pour voir le volume des cibles, puis jouer avec les flèches et espace.</p>
+<div class="demo"><section>
 <canvas width="640" height="400" tabindex="0" aria-label="Démo 3D. Flèches pour bouger, espace pour tirer."></canvas>
-<p id="status" role="status"></p><div class="controls"><button id="pause">Pause</button><button id="resume">Reprendre</button><button id="restart">Rejouer</button></div>
-<p>Cliquer dans le jeu pour activer les flèches et espace. Reprendre après une perte de focus. Cette démo n'ajoute pas de physique 3D ni de backend.</p>
+<p id="status" role="status"></p></section><aside>
+<div class="controls"><button id="pause">Pause</button><button id="resume">Reprendre</button><button id="restart">Rejouer</button></div>
+<div class="camera-control"><label for="viewpoint">Point de vue</label><input id="viewpoint" type="range" min="0" max="100" value="0"><div class="camera-labels"><span>De face</span><span>En biais</span></div></div>
+<p>Mettre en pause pour comparer les vues au même instant. Les positions, collisions et scores restent ceux du jeu Canvas.</p>
+<p>Cliquer dans le jeu pour activer les flèches et espace. Reprendre après une perte de focus.</p>
+</aside></div>
 </main><script type="module" src="/src/main.js"></script></body></html>
