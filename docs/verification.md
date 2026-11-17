@@ -2,19 +2,25 @@
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
-## Transition directe vers la serialization · correction locale
+## Publication des corrections · état actuel
+
+L’authentification GitHub a été relancée et le push des corrections a réussi. La branche main et la release fall-2026-r5 contiennent les supports actualisés : **259 slides principales**, **30 slides optionnelles** et le kit. La slide GitHub reste en position 8 et la slide 110 ouvre directement la serialization manuelle. Les 33 checkpoints applicatifs sont inchangés.
+
+Les PDF reprennent les exports vérifiés ci-dessous. Le kit est reconstruit avec les guides et les liens de release actualisés. Les contrôles de publication comparent les hashes SHA256 des trois fichiers et vérifient leurs liens publics. Résultats : output/publication-r5/.
+
+## Transition directe vers la serialization · correction publiée
 
 La slide « Notre backend fonctionne · Quelle suite ? » a été supprimée. Ses trois consignes reprenaient le bilan de fin du jour 1. L’ancienne slide 111 devient la slide 110 et commence par « Le CRUD fonctionne. Comment convertir une task en JSON ? ». Le bilan final conserve les exercices de restitution.
 
 Le build principal passe. La nouvelle slide 110 a été inspectée dans le navigateur puis dans le PDF. Le cours comporte **259 slides**, les options **30**. Les **289 titres** et les **43 liens de téléchargement** couvrant les **33 checkpoints** sont vérifiés. Les repères de relecture, le PDF et le kit locaux sont actualisés. Résultats : output/transition-review/.
 
-Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé. La publication reste à reprendre selon HANDOFF.md.
+Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé. La correction est incluse dans fall-2026-r5.
 
-## Annulation du déplacement GitHub · correction locale
+## Annulation du déplacement GitHub · étape précédente
 
-À la demande de l’enseignant, la slide GitHub reste en position 8. Les slides uv, projet et Flask restent en 10, 11 et 12. Le nom mon-backend devient ecm26-flask-ssr-reprise dans la slide et les guides, pour distinguer le clone du projet construit dans ecm26-flask-ssr. Le déplacement préparé n’a pas été publié, le push ayant échoué sur les credentials GitHub. La release publique reste fall-2026-r4. Aucun checkpoint applicatif n’a changé.
+À la demande de l’enseignant, la slide GitHub reste en position 8. Les slides uv, projet et Flask restent en 10, 11 et 12. Le nom mon-backend devient ecm26-flask-ssr-reprise dans la slide et les guides, pour distinguer le clone du projet construit dans ecm26-flask-ssr. Le premier push avait échoué sur les credentials GitHub. L’ordre corrigé est maintenant publié dans fall-2026-r5. Aucun checkpoint applicatif n’a changé.
 
-## Installation de uv avant le premier projet · état publié
+## Installation de uv avant le premier projet · état précédent (r4)
 
 La nouvelle slide 10 présente les installers macOS/Linux et Windows, le lien officiel et le contrôle `uv --version` après réouverture du terminal. La slide 11 crée le dossier du projet et nomme les fichiers attendus ; elle précise que `.venv/` apparaît au premier `uv run`. La slide 12 installe Flask et vérifie son import avant la création explicite de `app.py`. Ces étapes restent dans le bloc de préparation de 20 minutes.
 
@@ -22,7 +28,7 @@ Les commandes de création ont été exécutées dans un dossier temporaire : `u
 
 Le build principal passe. Les trois slides ont été inspectées dans le navigateur puis rendues depuis le PDF final. Les supports contiennent **260 et 30 pages** ; leurs **290 titres** correspondent aux sources, aucun caractère ne sort des pages et les **43 liens de téléchargement** couvrent les **33 checkpoints**. Résultats et captures : output/uv-install-review/.
 
-La distribution courante est la release fall-2026-r4 : deux PDF et le kit complet. Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
+La distribution de cette étape est la release fall-2026-r4 : deux PDF et le kit complet. Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
 
 ## GitHub comme point d’entrée Git · état précédent (17 novembre 2026)
 

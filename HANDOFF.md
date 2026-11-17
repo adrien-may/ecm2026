@@ -2,11 +2,11 @@
 
 Mis à jour le 17 novembre 2026. Le parcours principal comporte **259 slides**, complétées par **30 slides optionnelles**. Les 33 checkpoints sont conservés. Dépôt public : https://github.com/adrien-may/ecm2026. Les PDF de 259 et 30 pages sont vérifiés : 289 titres et 43 liens de téléchargement GitHub couvrant les 33 checkpoints. Le kit contient ces exports et les sources actualisées. La 3D revient dans le parcours commun en deux slides ; voir docs/verification.md.
 
-## Dernières corrections locales
+## Dernières corrections publiées
 
-Le déplacement de la slide GitHub a été annulé à la demande de l’enseignant. Elle reste en slide 8, uv en 10 et la création du projet en 11. Le clone utilise ecm26-flask-ssr-reprise/ pour rester cohérent avec le projet ecm26-flask-ssr/ tout en gardant un dossier distinct. Cette correction locale n’a pas été publiée : le dernier push a échoué car Git n’a pas pu obtenir les credentials GitHub. La release publique reste fall-2026-r4.
+Le déplacement de la slide GitHub a été annulé à la demande de l’enseignant. Elle reste en slide 8, uv en 10 et la création du projet en 11. Le clone utilise ecm26-flask-ssr-reprise/ pour rester cohérent avec le projet ecm26-flask-ssr/ tout en gardant un dossier distinct. Les corrections sont publiées sur main et dans la release fall-2026-r5.
 
-La transition « Notre backend fonctionne · Quelle suite ? » a été supprimée. La slide 110 ouvre directement l’expérience de serialization manuelle. Le bilan reste à la fin du jour 1. Le PDF et le kit locaux suivent cette séquence.
+La transition « Notre backend fonctionne · Quelle suite ? » a été supprimée. La slide 110 ouvre directement l’expérience de serialization manuelle. Le bilan reste à la fin du jour 1. Le PDF et le kit publiés suivent cette séquence.
 
 ## Repères de relecture
 
@@ -35,7 +35,7 @@ Le parcours commun conserve FastAPI + SQLAlchemy jusqu’au jeu. SQLModel propos
 
 ## Projets et reprise
 
-CHECKPOINTS.md indexe les 33 branches et ZIPs, sur GitHub. Les sources du cours sont sur main ; les autres branches contiennent les projets. Les PDF et le kit sont distribués dans la release fall-2026-r4 : https://github.com/adrien-may/ecm2026/releases/tag/fall-2026-r4. La slide 8 et docs/environment.md expliquent le clone GitHub et la reprise par branche. Les projets sont dans lessons/, projects/ et workshops/. Les README de game-starter, fastapi-03-sqlmodel et nest-02-sqlite ont été synchronisés avec la séparation des parcours ; leur code est inchangé.
+CHECKPOINTS.md indexe les 33 branches et ZIPs, sur GitHub. Les sources du cours sont sur main ; les autres branches contiennent les projets. Les PDF et le kit sont distribués dans la release fall-2026-r5 : https://github.com/adrien-may/ecm2026/releases/tag/fall-2026-r5. La slide 8 et docs/environment.md expliquent le clone GitHub et la reprise par branche. Les projets sont dans lessons/, projects/ et workshops/. Les README de game-starter, fastapi-03-sqlmodel et nest-02-sqlite ont été synchronisés avec la séparation des parcours ; leur code est inchangé.
 
 Attention : lessons/03-fastapi-todo contient le résultat optionnel SQLModel. Pour suivre le parcours commun, extraire fastapi-02-crud. Les deux versions ont 25 tests.
 

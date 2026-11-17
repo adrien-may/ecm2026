@@ -13,7 +13,7 @@ npm ci
 npm run slides -- --port 3030
 ```
 
-Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
+Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
 
 ```sh
 npm run slides:build
@@ -23,7 +23,7 @@ npm run slides:export
 
 Les liens de téléchargement des slides et des PDF pointent vers le dépôt public GitHub. Hors ligne, ouvrir `CHECKPOINTS.md` et les ZIPs du kit téléchargé à l’avance.
 
-Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
+Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
 
 Le build optionnel est dans slides/dist-options/. Le build principal est dans `slides/dist/`. Le PDF est exporté dans `output/ecm26-three-days.pdf`. L’export slide par slide prend quelques minutes et vérifie que les pages ont fini de charger.
 
@@ -43,7 +43,7 @@ Les outils sont introduits au moment du besoin. Les tests passent de la construc
 
 ## Reprendre exactement le même code
 
-[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Dépôt GitHub](https://github.com/adrien-may/ecm2026) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-course-kit.zip)
+[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Dépôt GitHub](https://github.com/adrien-may/ecm2026) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-course-kit.zip)
 
 ```sh
 git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git ecm26-flask-ssr-reprise
