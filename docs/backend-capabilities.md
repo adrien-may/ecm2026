@@ -1,15 +1,15 @@
 # Au-delà du CRUD · Repères enseignant
 
-Les slides 242–255 prolongent les architectures avec les besoins possibles du même jeu. Compter 30 minutes, discussion comprise. Aucun nouveau package, fichier applicatif ou service n’est demandé. Le server MCP, le webhook et les jobs décrits sont des exemples de conception.
+Les slides 241–254 prolongent les architectures avec les besoins possibles du même jeu. Compter 30 minutes, discussion comprise. Aucun nouveau package, fichier applicatif ou service n’est demandé. Le server MCP, le webhook et les jobs décrits sont des exemples de conception.
 
 | Slides | Besoin | Distinction à faire entendre |
 | --- | --- | --- |
-| 243–244 | Reconnaître une personne et contrôler ses actions | Authentication ≠ authorization ; le champ player du body ne prouve pas une identité |
-| 245–247 | Calculer un rapport en dehors d’une request | Acceptation ≠ réussite ; cron choisit le moment, le worker exécute |
-| 248 | Recevoir un event d’un service | Webhook ≠ polling ; il reste une request HTTP |
-| 249–250 | Éviter de recalculer le même classement | Cache ≠ source de vérité ; TTL ≠ cohérence immédiate |
-| 251–254 | Permettre à un assistant de lire le classement | MCP expose des capacités ; le backend conserve ses règles et ses permissions |
-| 255 | Choisir une évolution et sa preuve | Nommer le besoin avant de choisir un outil |
+| 242–243 | Reconnaître une personne et contrôler ses actions | Authentication ≠ authorization ; le champ player du body ne prouve pas une identité |
+| 244–246 | Calculer un rapport en dehors d’une request | Acceptation ≠ réussite ; cron choisit le moment, le worker exécute |
+| 247 | Recevoir un event d’un service | Webhook ≠ polling ; il reste une request HTTP |
+| 248–249 | Éviter de recalculer le même classement | Cache ≠ source de vérité ; TTL ≠ cohérence immédiate |
+| 250–253 | Permettre à un assistant de lire le classement | MCP expose des capacités ; le backend conserve ses règles et ses permissions |
+| 254 | Choisir une évolution et sa preuve | Nommer le besoin avant de choisir un outil |
 
 ## Authentication et session
 
@@ -48,6 +48,6 @@ Sources vérifiées contre la specification **2026-07-28** :
 
 ## Revenir à une vraie conclusion
 
-La slide 258 prépare une explication de test avant la présentation du projet. Elle ne conclut plus le cours.
+La slide 257 prépare une explication de test avant la présentation du projet. Elle ne conclut plus le cours.
 
-La slide 260, « Relier, tester, expliquer », revient sur le trajet interface → backend → données, les preuves apportées par les tests, et les choix que chaque étudiant peut expliquer. Elle clôt les acquis sans annoncer un nouvel outil ni un nouvel exercice.
+La slide 259, « Relier, tester, expliquer », revient sur le trajet interface → backend → données, les preuves apportées par les tests, et les choix que chaque étudiant peut expliquer. Elle clôt les acquis sans annoncer un nouvel outil ni un nouvel exercice.

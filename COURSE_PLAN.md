@@ -194,7 +194,7 @@ References: [Slidev guide](https://sli.dev/guide/), [syntax and presenter notes]
 | Section | Slides delivered | Content |
 | --- | ---: | --- |
 | Orientation and Flask opening | 53 | Cover, instructor/student introductions, three-day map, gradual Flask/SSR/test sequence |
-| Persistent todo CRUD | 57 | Contract, validation, package refactor, complete SQLite walkthrough, React |
+| Persistent todo CRUD | 56 | Contract, validation, package refactor, complete SQLite walkthrough, React |
 | Flask schemas and structure | 55 | Manual serialization, load/dump diagram, hooks, native Blueprint, Flask-smorest and OpenAPI, final review |
 | Day 2 orientation and FastAPI transfer | 23 | Game target, three milestones, todo contract and transition to scores |
 | Canvas workshop | 24 | Drawing, time, input, collisions, state and React |
@@ -205,7 +205,7 @@ References: [Slidev guide](https://sli.dev/guide/), [syntax and presenter notes]
 | Project presentation and conclusion | 5 | Completion, reproducibility, useful tests before the presentation, then a course synthesis |
 | Separate optional deck | 30 | SQLModel and NestJS with their checkpoints |
 
-The main deck has 260 slides; the optional deck has 30. Main sequence: day 1 (1–165), day 2 (166–228), day 3 (229–260). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
+The main deck has 259 slides; the optional deck has 30. Main sequence: day 1 (1–164), day 2 (165–227), day 3 (228–259). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
 
 Suggested new French slide titles include “Une requête de bout en bout”, “Le même contenu en HTML et en JSON”, “Ce que ce test garantit”, “Une base de test indépendante”, “Le même contrat avec FastAPI”, “Types et validation”, “Une image à chaque frame”, “Le serveur peut-il croire ce score ?” and “Lire et écrire avec CQRS”.
 
@@ -368,7 +368,7 @@ Provide a pre-course environment checklist, known-good checkpoints, downloadable
 
 ## Current implementation status
 
-The three-day delivery is implemented: **260 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
+The three-day delivery is implemented: **259 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
 
 - Day1: Flask introduced progressively, SSR and the weak/useful test comparison retained, then task CRUD, a separate package refactor, SQLite, isolated tests and React integration, followed by Marshmallow schemas, Blueprint organization and Flask-smorest/OpenAPI.
 - Day2: announce the game target, transfer the todo to FastAPI, create the Canvas interaction, and integrate scores using the same FastAPI/SQLAlchemy stack. A five-minute 3D opening follows Canvas; SQLModel and NestJS have a separate optional deck.

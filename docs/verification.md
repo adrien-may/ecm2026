@@ -2,6 +2,14 @@
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
+## Transition directe vers la serialization · correction locale
+
+La slide « Notre backend fonctionne · Quelle suite ? » a été supprimée. Ses trois consignes reprenaient le bilan de fin du jour 1. L’ancienne slide 111 devient la slide 110 et commence par « Le CRUD fonctionne. Comment convertir une task en JSON ? ». Le bilan final conserve les exercices de restitution.
+
+Le build principal passe. La nouvelle slide 110 a été inspectée dans le navigateur puis dans le PDF. Le cours comporte **259 slides**, les options **30**. Les **289 titres** et les **43 liens de téléchargement** couvrant les **33 checkpoints** sont vérifiés. Les repères de relecture, le PDF et le kit locaux sont actualisés. Résultats : output/transition-review/.
+
+Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé. La publication reste à reprendre selon HANDOFF.md.
+
 ## Annulation du déplacement GitHub · correction locale
 
 À la demande de l’enseignant, la slide GitHub reste en position 8. Les slides uv, projet et Flask restent en 10, 11 et 12. Le nom mon-backend devient ecm26-flask-ssr-reprise dans la slide et les guides, pour distinguer le clone du projet construit dans ecm26-flask-ssr. Le déplacement préparé n’a pas été publié, le push ayant échoué sur les credentials GitHub. La release publique reste fall-2026-r4. Aucun checkpoint applicatif n’a changé.

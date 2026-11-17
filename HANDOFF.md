@@ -1,10 +1,12 @@
 # Reprise du cours ECM 2026
 
-Mis à jour le 17 novembre 2026. Le parcours principal comporte **260 slides**, complétées par **30 slides optionnelles**. Les 33 checkpoints sont conservés. Dépôt public : https://github.com/adrien-may/ecm2026. Les PDF de 260 et 30 pages sont vérifiés : 290 titres et 43 liens de téléchargement GitHub couvrant les 33 checkpoints. Le kit contient ces exports et les sources actualisées. La 3D revient dans le parcours commun en deux slides ; voir docs/verification.md.
+Mis à jour le 17 novembre 2026. Le parcours principal comporte **259 slides**, complétées par **30 slides optionnelles**. Les 33 checkpoints sont conservés. Dépôt public : https://github.com/adrien-may/ecm2026. Les PDF de 259 et 30 pages sont vérifiés : 289 titres et 43 liens de téléchargement GitHub couvrant les 33 checkpoints. Le kit contient ces exports et les sources actualisées. La 3D revient dans le parcours commun en deux slides ; voir docs/verification.md.
 
-## Dernière correction locale
+## Dernières corrections locales
 
 Le déplacement de la slide GitHub a été annulé à la demande de l’enseignant. Elle reste en slide 8, uv en 10 et la création du projet en 11. Le clone utilise ecm26-flask-ssr-reprise/ pour rester cohérent avec le projet ecm26-flask-ssr/ tout en gardant un dossier distinct. Cette correction locale n’a pas été publiée : le dernier push a échoué car Git n’a pas pu obtenir les credentials GitHub. La release publique reste fall-2026-r4.
+
+La transition « Notre backend fonctionne · Quelle suite ? » a été supprimée. La slide 110 ouvre directement l’expérience de serialization manuelle. Le bilan reste à la fin du jour 1. Le PDF et le kit locaux suivent cette séquence.
 
 ## Repères de relecture
 
@@ -12,18 +14,18 @@ Le déplacement de la slide GitHub a été annulé à la demande de l’enseigna
 - **10–12** : installer uv selon son OS, contrôler les fichiers du projet, puis vérifier l’import de Flask.
 - **42–48** : template_rendered, fixture de capture, cleanup et garanties distinctes des tests.
 - **91 et 93** : session SQLAlchemy, select, scalars et all avant le GET.
-- **111–165** : serialization manuelle, Marshmallow, Blueprint, Flask-smorest et OpenAPI.
-- **166–167** : destination du jour 2 et ses trois résultats observables.
-- **168–187** : todo FastAPI avec SQLAlchemy, puis reprise à 25 tests.
-- **188–212** : passage de la todo au jeu, Canvas et montage React.
-- **213–214** : ouverture 3D de cinq minutes, captures du même instant et démo avec slider de caméra.
-- **215–228** : projet et intégration du classement, avec fichiers précis, test rouge puis POST, formulaire et point de synchronisation.
-- **234–237** : hexagonal architecture, ports/adapters, dependency inversion et clean architecture.
-- **240** : CQRS = Command Query Responsibility Segregation.
-- **242–255** : au-delà du CRUD : authentication/authorization, session, jobs/cron, webhooks, cache et MCP. Exemples de conception, pas de fonctionnalités ajoutées aux starters.
-- **258–260** : préparer une explication de test, présenter son projet, puis conclure sur « Relier, tester, expliquer ». La discussion sur les tests n’est plus la dernière slide. Aucune grille chiffrée ni durée individuelle.
+- **110–164** : serialization manuelle, Marshmallow, Blueprint, Flask-smorest et OpenAPI.
+- **165–166** : destination du jour 2 et ses trois résultats observables.
+- **167–186** : todo FastAPI avec SQLAlchemy, puis reprise à 25 tests.
+- **187–211** : passage de la todo au jeu, Canvas et montage React.
+- **212–213** : ouverture 3D de cinq minutes, captures du même instant et démo avec slider de caméra.
+- **214–227** : projet et intégration du classement, avec fichiers précis, test rouge puis POST, formulaire et point de synchronisation.
+- **233–236** : hexagonal architecture, ports/adapters, dependency inversion et clean architecture.
+- **239** : CQRS = Command Query Responsibility Segregation.
+- **241–254** : au-delà du CRUD : authentication/authorization, session, jobs/cron, webhooks, cache et MCP. Exemples de conception, pas de fonctionnalités ajoutées aux starters.
+- **257–259** : préparer une explication de test, présenter son projet, puis conclure sur « Relier, tester, expliquer ». La discussion sur les tests n’est plus la dernière slide. Aucune grille chiffrée ni durée individuelle.
 
-Jour 1 : 1–165. Jour 2 : 166–228. Jour 3 : 229–260. Le cours reste sur http://localhost:3030. L’onglet présentateur n’a pas été déplacé.
+Jour 1 : 1–164. Jour 2 : 165–227. Jour 3 : 228–259. Le cours reste sur http://localhost:3030. L’onglet présentateur n’a pas été déplacé.
 
 ## Les options sont un support séparé
 

@@ -26,7 +26,7 @@ Le bloc de 105 minutes inclut la découverte de FastAPI et l’exercice todo. Pr
 
 Canvas occupe 90 minutes, montage React compris. Avant de passer au projet, faire observer une fin de partie et son score. Garder le dossier game-starter extrait à cette étape.
 
-Après Canvas, consacrer cinq minutes aux deux slides 3D (213–214). Préparer la démo avant la séance, mettre le jeu en pause et déplacer le slider Point de vue. Les deux captures montrent le même instant. Éviter les paramètres de caméra et le code de rendu : l’objectif est de voir une autre représentation du jeu. Revenir explicitement à game-starter/ pour le score.
+Après Canvas, consacrer cinq minutes aux deux slides 3D (212–213). Préparer la démo avant la séance, mettre le jeu en pause et déplacer le slider Point de vue. Les deux captures montrent le même instant. Éviter les paramètres de caméra et le code de rendu : l’objectif est de voir une autre représentation du jeu. Revenir explicitement à game-starter/ pour le score.
 
 Consacrer 35 minutes à l’intégration guidée : repérer backend/ et frontend/, lancer les deux terminaux, écrire le test POST puis GET, constater 405, ajouter la route, puis construire le formulaire et les états de sauvegarde. La référence complète a 11 tests backend et 14 frontend ; le seul test ajouté au starter en donne 2 côté backend.
 

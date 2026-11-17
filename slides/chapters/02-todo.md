@@ -1137,19 +1137,3 @@ Arrêter le backend : le client doit expliquer l’erreur et conserver la liste.
 <!--
 7 min. Faire observer Network, status code et body. Une response 204 est sans JSON à parser. Une erreur réseau après une écriture peut laisser son résultat incertain : recharger avant de retenter aveuglément une création. Le chapitre suivant garde le même client.
 -->
-
----
-
-# Notre backend fonctionne · Quelle suite ?
-
-Tracer : clic → request → route → validation → database → response.
-
-Montrer le test qui attrape la modification du mauvais ID.
-
-Placer `todo/__init__.py` et `tests/__init__.py` sans regarder le corrigé.
-
-Le CRUD fonctionne. Maintenant : **rendre sa validation et son organisation plus faciles à relire.**
-
-<!--
-Transition vers Marshmallow et Blueprint, avant le bilan du jour 1. Les mêmes tests serviront de garde-fous pendant les deux refactors.
--->

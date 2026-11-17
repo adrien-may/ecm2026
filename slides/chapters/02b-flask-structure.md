@@ -1,5 +1,7 @@
 # 15 · Une serialization vraiment à la main
 
+Le CRUD fonctionne. **Comment convertir une task en JSON ?**
+
 **Expérience dans `uv run python`**, à la racine du backend. Aucun fichier à créer.
 
 ```python

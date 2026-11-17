@@ -1,6 +1,6 @@
 # ECM 2026 · Trois jours de backend et web
 
-**260 slides de cours et 30 slides d’approfondissement**, une progression de code guidée, **33 checkpoints complets**, deux évaluations et des projets exécutables. Les explications sont en français ; les termes techniques restent en anglais. `_reference/` est conservé sans modification.
+**259 slides de cours et 30 slides d’approfondissement**, une progression de code guidée, **33 checkpoints complets**, deux évaluations et des projets exécutables. Les explications sont en français ; les termes techniques restent en anglais. `_reference/` est conservé sans modification.
 
 Le démarrage guidé installe `uv` à la slide 10, crée le projet à la slide 11, puis ajoute Flask à la slide 12. [Installation et vérifications](docs/environment.md).
 
@@ -31,13 +31,13 @@ Le build optionnel est dans slides/dist-options/. Le build principal est dans `s
 
 | Jour | Slides | Fil conducteur | Code |
 | --- | --- | --- | --- |
-| 1 | 1–165 | Flask installé progressivement, SSR, pytest, decorators, tests utiles, CRUD, SQLite, React, Marshmallow, Blueprint, OpenAPI | [Introduction](lessons/01-flask-ssr/README.md), [todo Flask](lessons/02-flask-todo/README.md), [React](projects/todo-client/README.md) |
-| 2 | 166–228 | Todo FastAPI → jeu Canvas → classement avec le même backend | [FastAPI avec SQLAlchemy](slides/public/checkpoints/fastapi-02-crud.zip), [Canvas](workshops/canvas/README.md) |
-| 3 | 229–260 | Architecture, authentication, jobs/cron, webhooks, cache, MCP, projet et synthèse | [Starter](projects/game-starter/README.md), [référence](projects/game-reference/README.md), [brief final](assessments/02-game.md) |
+| 1 | 1–164 | Flask installé progressivement, SSR, pytest, decorators, tests utiles, CRUD, SQLite, React, Marshmallow, Blueprint, OpenAPI | [Introduction](lessons/01-flask-ssr/README.md), [todo Flask](lessons/02-flask-todo/README.md), [React](projects/todo-client/README.md) |
+| 2 | 165–227 | Todo FastAPI → jeu Canvas → classement avec le même backend | [FastAPI avec SQLAlchemy](slides/public/checkpoints/fastapi-02-crud.zip), [Canvas](workshops/canvas/README.md) |
+| 3 | 228–259 | Architecture, authentication, jobs/cron, webhooks, cache, MCP, projet et synthèse | [Starter](projects/game-starter/README.md), [référence](projects/game-reference/README.md), [brief final](assessments/02-game.md) |
 
-Le jour 2 commence par la cible du projet, puis suit trois résultats observables. FastAPI + SQLAlchemy reste le backend commun jusqu’au classement. Une [démo 3D](workshops/three-demo/README.md) de cinq minutes prolonge Canvas aux slides 213–214 : déplacer la caméra autour du même jeu, puis revenir au score. Les options [SQLModel](lessons/03-fastapi-todo/README.md) et [NestJS](lessons/04-nest-scores/README.md) restent dans un support séparé.
+Le jour 2 commence par la cible du projet, puis suit trois résultats observables. FastAPI + SQLAlchemy reste le backend commun jusqu’au classement. Une [démo 3D](workshops/three-demo/README.md) de cinq minutes prolonge Canvas aux slides 212–213 : déplacer la caméra autour du même jeu, puis revenir au score. Les options [SQLModel](lessons/03-fastapi-todo/README.md) et [NestJS](lessons/04-nest-scores/README.md) restent dans un support séparé.
 
-Après les architectures, les slides 242–255 présentent d’autres responsabilités du backend à partir du même classement. Ce survol ne rajoute pas de fonctionnalités au projet. Les [repères du chapitre](docs/backend-capabilities.md) précisent les distinctions et les sources. Le cours se termine par une synthèse des acquis ; la discussion sur les tests prépare la présentation.
+Après les architectures, les slides 241–254 présentent d’autres responsabilités du backend à partir du même classement. Ce survol ne rajoute pas de fonctionnalités au projet. Les [repères du chapitre](docs/backend-capabilities.md) précisent les distinctions et les sources. Le cours se termine par une synthèse des acquis ; la discussion sur les tests prépare la présentation.
 
 Les outils sont introduits au moment du besoin. Les tests passent de la construction de l'app au comportement HTTP, puis aux entrées invalides, à la persistance et aux règles du jeu. Le cours conserve la comparaison entre le test qui utilise le même template et celui qui exprime le besoin du visiteur.
 
