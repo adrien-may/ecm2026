@@ -111,6 +111,33 @@ Le guide de chaque branche détaille la reprise. Ne jamais demander git reset --
 
 ---
 
+# Installer uv
+
+`uv` gère les **packages** et les **virtualenvs**. [Instructions officielles](https://docs.astral.sh/uv/getting-started/installation/)
+
+**macOS / Linux · Terminal**
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows · PowerShell**
+
+```powershell
+powershell -ExecutionPolicy ByPass -c `
+  "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**Rouvrir le terminal**, puis exécuter **`uv --version`** : un numéro de version doit apparaître.
+
+
+<!--
+5 min dans le bloc existant de préparation du poste. Installer uv une seule fois sur la machine ; le projet sera créé à la slide suivante. Choisir uniquement la commande de son OS. Sous Windows, les deux lignes forment une commande PowerShell ; le backtick termine la première ligne, sans espace après. Le flag ExecutionPolicy ne vaut que pour le processus de cette commande. Les installers officiels configurent le path de uv ; fermer puis rouvrir le terminal, y compris celui de l’éditeur, avant de vérifier uv --version. Si la commande est encore introuvable, suivre les indications de l’installer et le lien officiel. Ne pas installer Flask à cette étape.
+Sources vérifiées le 17 novembre 2026 : https://docs.astral.sh/uv/getting-started/installation/ et https://github.com/astral-sh/uv/blob/main/README.md
+-->
+
+---
+
 # 00 · Un projet Python, sans Flask
 
 <div class="lesson-step">00-ready</div>
@@ -125,16 +152,16 @@ uv python pin 3.12
 uv run python --version
 ```
 
-**Attendu : Python 3.12.x.** `pyproject.toml` décrit le projet.
+**Attendu : Python 3.12.x.** Repérer `.python-version`, `pyproject.toml`, `uv.lock` et `.venv/`.
 
-`uv run` prépare son environnement dans `.venv`.
+**`.venv/` apparaît au premier `uv run`**, pas au moment de `uv init`.
 
 <a href="https://github.com/adrien-may/ecm2026/raw/refs/heads/main/slides/public/checkpoints/00-ready.zip" download>Reprise : 00-ready (.zip)</a>
 
 <!--
-10 min. Prérequis à installer avant le cours : Python 3.12, uv, Git et un éditeur.
+5 min, après les 5 minutes consacrées à uv. Git et un éditeur sont déjà installés. Le premier uv run peut télécharger Python 3.12 si nécessaire.
 Vérifier le dossier courant. Les étudiants créent un dossier de travail indépendant du dépôt des supports.
-uv init --bare ne crée pas de code d'exemple ; uv python pin écrit .python-version.
+uv init --bare crée un projet minimal sans code d’exemple ; uv python pin écrit .python-version. Afficher les fichiers masqués dans l’explorateur pour voir .python-version et .venv/. Le dossier .git ne fait pas partie du contrôle de cette étape : sa présence dépend du mode d’initialisation et du dépôt de départ. Les checkpoints se récupèrent depuis GitHub, comme montré à la slide 8.
 uv run crée l'environnement et le lockfile au premier lancement. Aucune dépendance applicative à ce stade.
 Source : https://docs.astral.sh/uv/concepts/projects/init/
 -->
@@ -147,7 +174,10 @@ Source : https://docs.astral.sh/uv/concepts/projects/init/
 
 ```sh
 uv add flask==3.1.3
+uv run python -c "import flask; print('Flask disponible')"
 ```
+
+**Attendu : `Flask disponible`.**
 
 **Créer le fichier** `app.py` à la racine, à côté de `pyproject.toml`.
 

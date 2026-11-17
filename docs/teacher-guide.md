@@ -6,6 +6,8 @@ Avant chaque bloc de code, faire repérer l'action visible dans la slide : crée
 
 ## Jour 1
 
+Faire installer uv avec la commande de son OS, rouvrir le terminal et vérifier uv --version (slide 10). Le projet vient ensuite : uv init --bare crée le pyproject.toml, puis le premier uv run crée .venv/ et uv.lock. Après uv add flask, vérifier « Flask disponible » avant d’écrire app.py. Ces contrôles restent dans le bloc initial de préparation du poste.
+
 Consacrer la matinée à construire Flask progressivement. Installer Flask, puis pytest, et distinguer chaque decorator. Préserver le SSR et l'expérience du test comparant le même template : il vérifie une cohérence, mais ne détecte pas certaines régressions du besoin. Faire prédire avant de casser le prénom.
 
 L'après-midi relie JSON au client connu : CRUD en mémoire, refactor isolé vers le package `todo`, puis ORM, persistance et React. La séquence SQLite montre les blocs complets : modèle, configuration, commande, cinq routes, fixtures et test de redémarrage. Faire observer le test rouge avant le refactor ; utiliser le ZIP pour comparaison ou reprise. Vérifier l'emplacement du marker en demandant aux étudiants de le désigner dans leur propre arbre.
@@ -24,7 +26,7 @@ Le bloc de 105 minutes inclut la découverte de FastAPI et l’exercice todo. Pr
 
 Canvas occupe 90 minutes, montage React compris. Avant de passer au projet, faire observer une fin de partie et son score. Garder le dossier game-starter extrait à cette étape.
 
-Après Canvas, consacrer cinq minutes aux deux slides 3D (212–213). Préparer la démo avant la séance, mettre le jeu en pause et déplacer le slider Point de vue. Les deux captures montrent le même instant. Éviter les paramètres de caméra et le code de rendu : l’objectif est de voir une autre représentation du jeu. Revenir explicitement à game-starter/ pour le score.
+Après Canvas, consacrer cinq minutes aux deux slides 3D (213–214). Préparer la démo avant la séance, mettre le jeu en pause et déplacer le slider Point de vue. Les deux captures montrent le même instant. Éviter les paramètres de caméra et le code de rendu : l’objectif est de voir une autre représentation du jeu. Revenir explicitement à game-starter/ pour le score.
 
 Consacrer 35 minutes à l’intégration guidée : repérer backend/ et frontend/, lancer les deux terminaux, écrire le test POST puis GET, constater 405, ajouter la route, puis construire le formulaire et les états de sauvegarde. La référence complète a 11 tests backend et 14 frontend ; le seul test ajouté au starter en donne 2 côté backend.
 

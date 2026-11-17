@@ -2,7 +2,28 @@
 
 Versions réellement utilisées pour construire le kit : **Python 3.12.9**, **uv 0.6.3**, **Node 26.10.0**. Les lockfiles fixent les packages. Utiliser la version Node répétée en classe, même si plusieurs projets acceptent des versions plus anciennes. Aucun compte cloud n'est nécessaire.
 
-Avant le cours : vérifier `git --version`, `uv --version`, `node --version`, `npm --version`, puis `uv python install 3.12`. Cloner le dépôt GitHub pendant que le réseau fonctionne ; les branches récupérées restent disponibles localement. Installer les dépendances d'un checkpoint de chaque écosystème avant la séance si le réseau de l'école est incertain. Les ZIPs contiennent le code et les lockfiles, **pas les caches de packages** ; un premier install hors ligne n'est pas garanti.
+Avant le cours : installer uv avec les instructions ci-dessous, puis vérifier `git --version`, `uv --version`, `node --version` et `npm --version`. `uv python install 3.12` permet de préparer Python avant la séance. Cloner le dépôt GitHub pendant que le réseau fonctionne ; les branches récupérées restent disponibles localement. Installer les dépendances d'un checkpoint de chaque écosystème avant la séance si le réseau de l'école est incertain. Les ZIPs contiennent le code et les lockfiles, **pas les caches de packages** ; un premier install hors ligne n'est pas garanti.
+
+## Installer uv avant de créer le projet
+
+`uv` est le package manager utilisé pour installer les packages et gérer les virtualenvs. Installer uv une seule fois sur la machine, avec la commande correspondant à son OS.
+
+macOS / Linux, dans un terminal :
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Windows, dans PowerShell :
+
+```powershell
+powershell -ExecutionPolicy ByPass -c `
+  "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Fermer puis rouvrir le terminal, y compris celui de l’éditeur. `uv --version` doit afficher un numéro de version. Si uv reste introuvable, suivre les indications de l’installer et les [instructions officielles](https://docs.astral.sh/uv/getting-started/installation/).
+
+Dans notre cours, `uv init --bare` crée un projet minimal. `uv python pin 3.12` écrit `.python-version`. Le premier `uv run` prépare `.venv/` et `uv.lock`. Afficher les fichiers masqués dans l’explorateur ; `.git/` n’est pas un critère de réussite pour l’installation de uv. Installer Flask seulement à l’étape suivante, avec `uv add flask==3.1.3`, puis vérifier `uv run python -c "import flask; print('Flask disponible')"`.
 
 ## Python
 

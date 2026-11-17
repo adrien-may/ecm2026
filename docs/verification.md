@@ -2,7 +2,17 @@
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
-## GitHub comme point d’entrée Git · état actuel
+## Installation de uv avant le premier projet · état actuel
+
+La nouvelle slide 10 présente les installers macOS/Linux et Windows, le lien officiel et le contrôle `uv --version` après réouverture du terminal. La slide 11 crée le dossier du projet et nomme les fichiers attendus ; elle précise que `.venv/` apparaît au premier `uv run`. La slide 12 installe Flask et vérifie son import avant la création explicite de `app.py`. Ces étapes restent dans le bloc de préparation de 20 minutes.
+
+Les commandes de création ont été exécutées dans un dossier temporaire : `uv init --bare --python 3.12` crée `pyproject.toml` ; après le pin et le premier run, `.python-version`, `.venv/` et `uv.lock` sont également présents. Le contrôle retourne Python 3.12.9 ; après `uv add flask==3.1.3`, l’import affiche « Flask disponible ». Les installers correspondent à la [documentation officielle](https://docs.astral.sh/uv/getting-started/installation/) consultée via Context7. Ils n’ont pas été réexécutés sur le poste enseignant ; l’installation sous Windows n’a pas été exécutée.
+
+Le build principal passe. Les trois slides ont été inspectées dans le navigateur puis rendues depuis le PDF final. Les supports contiennent **260 et 30 pages** ; leurs **290 titres** correspondent aux sources, aucun caractère ne sort des pages et les **43 liens de téléchargement** couvrent les **33 checkpoints**. Résultats et captures : output/uv-install-review/.
+
+La distribution courante est la release fall-2026-r4 : deux PDF et le kit complet. Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
+
+## GitHub comme point d’entrée Git · état précédent (17 novembre 2026)
 
 La slide 8 ouvre le dépôt GitHub et montre le clone à la première branche Flask. Les guides et les README des checkpoints utilisent le clone GitHub et les worktrees. Les comparaisons de checkpoints nomment les deux branches plutôt que HEAD~1, pour rester pertinentes après une modification de documentation.
 
@@ -10,7 +20,7 @@ Les 20 checkpoints qui mentionnaient l’ancienne distribution ont reçu un comm
 
 Le build principal passe. La slide 8 a été inspectée dans le navigateur puis dans le PDF actualisé. Les supports conservent **259 et 30 pages**, leurs **289 titres** et **43 liens de téléchargement** couvrant les 33 checkpoints. Le normaliseur conserve les URLs GitHub. Résultats et capture : output/github-only-review/.
 
-La distribution courante est la release fall-2026-r3 : deux PDF et le kit complet. Aucun code applicatif n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
+La distribution de cette étape est la release fall-2026-r3 : deux PDF et le kit complet. Aucun code applicatif n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
 
 ## Ouverture 3D dans le parcours commun · état précédent (16 novembre 2026)
 

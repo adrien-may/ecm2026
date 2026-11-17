@@ -45,7 +45,7 @@ Budget per day: 375 minutes of planned activity plus 45 minutes for short breaks
 
 | Minutes | Activity | Evidence of progress |
 | ---: | --- | --- |
-| 20 | Environment check and diagnostic; start a Python project | Python 3.12 runs; no application packages yet |
+| 20 | Install uv, check the environment and start a Python project | uv is available, Python 3.12 runs, project files and virtualenv are visible |
 | 20 | Backend purpose, HTTP and the course checkpoints | Identify request, response, headers, body and status code |
 | 40 | Install Flask, then pytest; first app, route test, route decorator | See 404 make a test fail, implement the route, reach 2 passing tests |
 | 40 | Move HTML into Jinja; query string, escaping and SSR | Same tests survive the template refactor; 5 cases cover the page |
@@ -187,13 +187,13 @@ Keep the presentation in this repository under `slides/`. Start with one entry d
 
 The browser presentation is the primary delivery format. Export a PDF handout and offline fallback; inspect the export because interactive demonstrations and reveal steps need an intentional static representation. The old Google Slides deck remains the source reference rather than a second independently maintained copy.
 
-The first teaching deliverable is the complete guided Flask opening, with packages installed when needed and concrete recoverable checkpoints. The rebuilt opening has 48 chapter slides, preceded by the cover, instructor/student introductions and three-day learning map. File and directory creation instructions appear in the main content, with separate red, green, refactor and synchronization moments. Introduce each behavior and its purpose before proposing the helper name used to implement it. Review the slides together with their runnable states. Link larger games as standalone demos initially.
+The first teaching deliverable is the complete guided Flask opening, with packages installed when needed and concrete recoverable checkpoints. The rebuilt opening has 49 chapter slides, preceded by the cover, instructor/student introductions and three-day learning map. File and directory creation instructions appear in the main content, with separate red, green, refactor and synchronization moments. Introduce each behavior and its purpose before proposing the helper name used to implement it. Review the slides together with their runnable states. Link larger games as standalone demos initially.
 
 References: [Slidev guide](https://sli.dev/guide/), [syntax and presenter notes](https://sli.dev/guide/syntax), [chapter imports](https://sli.dev/features/importing-slides), [exporting](https://sli.dev/guide/exporting).
 
 | Section | Slides delivered | Content |
 | --- | ---: | --- |
-| Orientation and Flask opening | 52 | Cover, instructor/student introductions, three-day map, gradual Flask/SSR/test sequence |
+| Orientation and Flask opening | 53 | Cover, instructor/student introductions, three-day map, gradual Flask/SSR/test sequence |
 | Persistent todo CRUD | 57 | Contract, validation, package refactor, complete SQLite walkthrough, React |
 | Flask schemas and structure | 55 | Manual serialization, load/dump diagram, hooks, native Blueprint, Flask-smorest and OpenAPI, final review |
 | Day 2 orientation and FastAPI transfer | 23 | Game target, three milestones, todo contract and transition to scores |
@@ -205,7 +205,7 @@ References: [Slidev guide](https://sli.dev/guide/), [syntax and presenter notes]
 | Project presentation and conclusion | 5 | Completion, reproducibility, useful tests before the presentation, then a course synthesis |
 | Separate optional deck | 30 | SQLModel and NestJS with their checkpoints |
 
-The main deck has 259 slides; the optional deck has 30. Main sequence: day 1 (1–164), day 2 (165–227), day 3 (228–259). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
+The main deck has 260 slides; the optional deck has 30. Main sequence: day 1 (1–165), day 2 (166–228), day 3 (229–260). Many slides are short coding or synchronization pauses. Separate a new requirement, failing test, implementation and recovery checkpoint when this helps students follow along.
 
 Suggested new French slide titles include “Une requête de bout en bout”, “Le même contenu en HTML et en JSON”, “Ce que ce test garantit”, “Une base de test indépendante”, “Le même contrat avec FastAPI”, “Types et validation”, “Une image à chaque frame”, “Le serveur peut-il croire ce score ?” and “Lire et écrire avec CQRS”.
 
@@ -368,13 +368,13 @@ Provide a pre-course environment checklist, known-good checkpoints, downloadable
 
 ## Current implementation status
 
-The three-day delivery is implemented: **259 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
+The three-day delivery is implemented: **260 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
 
 - Day1: Flask introduced progressively, SSR and the weak/useful test comparison retained, then task CRUD, a separate package refactor, SQLite, isolated tests and React integration, followed by Marshmallow schemas, Blueprint organization and Flask-smorest/OpenAPI.
 - Day2: announce the game target, transfer the todo to FastAPI, create the Canvas interaction, and integrate scores using the same FastAPI/SQLAlchemy stack. A five-minute 3D opening follows Canvas; SQLModel and NestJS have a separate optional deck.
 - Day3: architecture through the same game, including hexa and clean; other backend responsibilities (authentication, jobs/cron, webhooks, cache, MCP), then implementation, reproducibility, presentation and a synthesis of the three days. No numerical final-project grid or per-person time limit.
 - Exact package marker placement is shown in the opening, Flask package refactor, FastAPI tree and game backend tree. No marker at the project root, in templates or in frontend folders.
 - Clean checkpoint installation, intentional red transitions, regression behavior, Git clone/worktree recovery, browser workflows and PDF rendering were checked. Detailed results are in docs/verification.md.
-- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026-r3 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
+- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026-r4 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
 - No instructor content approval was assumed. NestJS is in the separate optional support; the baseline is a submission freeze before day3 orals, with the after-course alternative documented.
 - No remote repository was published. The original Google Slides and _reference/ remain unchanged. The instructor checkout retains its original uncommitted state; course checkpoint refs are separate student project snapshots.
