@@ -67,6 +67,34 @@ Annoncer les arrêts rouges attendus : ils font partie de l'exercice, pas d'un i
 
 ---
 
+# Reprendre exactement le même code
+
+<div class="lesson-step">Repères</div>
+
+[Ouvrir le dépôt du cours sur GitHub](https://github.com/adrien-may/ecm2026)
+
+```sh
+git clone -b flask-00-ready \
+  https://github.com/adrien-may/ecm2026.git \
+  ecm26-flask-ssr-reprise
+cd ecm26-flask-ssr-reprise
+```
+
+À chaque point de synchronisation : **retrouver la branche indiquée sur GitHub**.
+
+Le clone contient toutes les branches. **Les ZIPs restent une solution de secours.**
+
+<!--
+5 min. Le dépôt public ne demande aucun compte GitHub pour cloner. La branche main contient les supports ; flask-00-ready contient le premier projet.
+Cloner avant la séance si le réseau risque de manquer : les branches récupérées restent disponibles localement.
+Le clone crée ecm26-flask-ssr-reprise/ dans le dossier de travail courant. Pour suivre depuis zéro, créer ensuite ecm26-flask-ssr/ comme indiqué à la slide 11. Garder ces deux dossiers côte à côte. Installer uv avant de synchroniser un clone avec uv sync --locked.
+Depuis le clone, git switch flask-03-route suffit si le travail est enregistré et l'arbre propre.
+Avec du travail non enregistré : git worktree add --detach ../reprise-route origin/flask-03-route.
+Le guide de chaque branche détaille la reprise. Ne jamais demander git reset --hard ni git clean.
+-->
+
+---
+
 # Nos repères dans les fichiers
 
 **Racine du projet** : le dossier qui contient `pyproject.toml`.
@@ -74,7 +102,7 @@ Annoncer les arrêts rouges attendus : ils font partie de l'exercice, pas d'un i
 - **Créer un dossier** : le faire apparaître dans l'explorateur de l'éditeur.
 - **Créer un fichier** : ouvrir un nouveau fichier, puis l'enregistrer au path indiqué.
 - **Modifier un fichier existant** : l'ouvrir et changer uniquement le bloc indiqué.
-- **Fichier fourni** : il existe dans la branche clonée, on l'ouvre pour le lire ou le modifier.
+- **Fichier fourni** : il existe dans le ZIP extrait, on l'ouvre pour le lire ou le modifier.
 
 `tests/conftest.py` signifie : dossier `tests/`, puis fichier **`conftest.py`**, sans « s ».
 
@@ -134,41 +162,9 @@ uv run python --version
 <!--
 5 min, après les 5 minutes consacrées à uv. Git et un éditeur sont déjà installés. Le premier uv run peut télécharger Python 3.12 si nécessaire.
 Vérifier le dossier courant. Les étudiants créent un dossier de travail indépendant du dépôt des supports.
-uv init --bare crée un projet minimal sans code d’exemple ; uv python pin écrit .python-version. Afficher les fichiers masqués dans l’explorateur pour voir .python-version et .venv/. Le dossier .git ne fait pas partie du contrôle de cette étape : sa présence dépend du mode d’initialisation et du dépôt de départ. La slide suivante compare cet état avec le checkpoint GitHub et explique la reprise si nécessaire.
+uv init --bare crée un projet minimal sans code d’exemple ; uv python pin écrit .python-version. Afficher les fichiers masqués dans l’explorateur pour voir .python-version et .venv/. Le dossier .git ne fait pas partie du contrôle de cette étape : sa présence dépend du mode d’initialisation et du dépôt de départ. Les checkpoints se récupèrent depuis GitHub, comme montré à la slide 8.
 uv run crée l'environnement et le lockfile au premier lancement. Aucune dépendance applicative à ce stade.
 Source : https://docs.astral.sh/uv/concepts/projects/init/
--->
-
----
-
-# Reprendre exactement le même code
-
-<div class="lesson-step">00-ready</div>
-
-Notre projet correspond à la branche **[flask-00-ready sur GitHub](https://github.com/adrien-may/ecm2026/tree/flask-00-ready)**.
-
-**En cas de blocage**, depuis `ecm26-flask-ssr/`, créer un clone à côté :
-
-```sh
-cd ..
-git clone -b flask-00-ready \
-  https://github.com/adrien-may/ecm2026.git \
-  ecm26-flask-ssr-reprise
-cd ecm26-flask-ssr-reprise
-uv sync --locked
-```
-
-`uv sync --locked` installe les packages du checkpoint dans **`.venv/`**.
-
-**Continuer dans le clone si on a repris.** Le dossier initial est conservé.
-
-<!--
-5 min. Ce premier point de synchronisation vient après la création du projet. Comparer les fichiers avec la branche flask-00-ready. Si tout fonctionne, garder ecm26-flask-ssr/ et passer à Flask sans exécuter le clone.
-En cas de reprise, partir du terminal ouvert dans ecm26-flask-ssr/. cd .. remonte dans son dossier parent. git clone crée lui-même le dossier voisin ecm26-flask-ssr-reprise/ : ne pas faire mkdir avant, ni cloner dans le dossier initial déjà rempli. Ouvrir le clone dans l’éditeur pour y continuer le cours. Si ce dossier de reprise existe déjà, choisir un autre nom de dossier libre.
-uv sync --locked crée .venv/ et installe les versions de uv.lock sans le modifier. Le groupe dev est inclus par défaut. Le checkpoint 00 ne contient pas encore Flask ni pytest. Après chaque changement de branche Python, relancer uv sync --locked depuis le dossier contenant pyproject.toml et uv.lock.
-Le dépôt public ne demande aucun compte GitHub. main contient les supports ; les autres branches contiennent les checkpoints. Les ZIPs restent une solution de secours.
-Depuis un clone avec un arbre propre, git switch flask-03-route puis uv sync --locked permettent de changer d’étape. Avec du travail non enregistré, créer un worktree : git worktree add --detach ../reprise-route origin/flask-03-route. Ouvrir ce dossier et y exécuter uv sync --locked.
-Ne jamais demander git reset --hard ni git clean. Source uv : https://docs.astral.sh/uv/concepts/projects/sync/
 -->
 
 ---

@@ -6,7 +6,7 @@ Avant chaque bloc de code, faire repérer l'action visible dans la slide : crée
 
 ## Jour 1
 
-Faire installer uv avec la commande de son OS, rouvrir le terminal et vérifier uv --version (slide 9). Le projet vient ensuite (slide 10) : uv init --bare crée le pyproject.toml, puis le premier uv run crée .venv/ et uv.lock. Comparer alors les fichiers avec flask-00-ready (slide 11). Seuls les étudiants bloqués créent le clone voisin ecm26-flask-ssr-reprise/ et y exécutent uv sync --locked. Les autres gardent leur dossier initial. Après uv add flask, vérifier « Flask disponible » avant d’écrire app.py. Ces contrôles restent dans le bloc initial de préparation du poste.
+Faire installer uv avec la commande de son OS, rouvrir le terminal et vérifier uv --version (slide 10). Le projet vient ensuite : uv init --bare crée le pyproject.toml, puis le premier uv run crée .venv/ et uv.lock. Après uv add flask, vérifier « Flask disponible » avant d’écrire app.py. Ces contrôles restent dans le bloc initial de préparation du poste.
 
 Consacrer la matinée à construire Flask progressivement. Installer Flask, puis pytest, et distinguer chaque decorator. Préserver le SSR et l'expérience du test comparant le même template : il vérifie une cohérence, mais ne détecte pas certaines régressions du besoin. Faire prédire avant de casser le prénom.
 

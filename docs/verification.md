@@ -2,17 +2,11 @@
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
-## Reprise GitHub après la création du projet · état actuel
+## Annulation du déplacement GitHub · correction locale
 
-Le parcours commence par les repères de fichiers (slide 8), l’installation de uv (9) et la création du projet (10). La reprise GitHub vient ensuite (11), avant Flask (12). La branche flask-00-ready est présentée comme l’état que les étudiants viennent de construire. En cas de blocage, le clone crée ecm26-flask-ssr-reprise/ à côté du dossier initial ecm26-flask-ssr/ et `uv sync --locked` prépare son environnement. Les guides utilisent les mêmes noms.
+À la demande de l’enseignant, la slide GitHub reste en position 8. Les slides uv, projet et Flask restent en 10, 11 et 12. Le nom mon-backend devient ecm26-flask-ssr-reprise dans la slide et les guides, pour distinguer le clone du projet construit dans ecm26-flask-ssr. Le déplacement préparé n’a pas été publié, le push ayant échoué sur les credentials GitHub. La release publique reste fall-2026-r4. Aucun checkpoint applicatif n’a changé.
 
-Les commandes affichées ont été exécutées depuis un dossier temporaire contenant du travail étudiant : le fichier initial reste intact, le clone utilise flask-00-ready, .venv/ est créé et l’arbre Git reste propre. Après `git switch flask-03-route` puis `uv sync --locked`, les **2 tests passent**. La documentation officielle de uv confirme la synchronisation du groupe dev par défaut et le refus de modifier un lockfile avec --locked.
-
-Le build principal passe. Les slides 8 et 11 ont été inspectées dans le navigateur et la reprise dans le PDF final. Les quatre pages déplacées ont été réexportées. Les **260 et 30 pages**, **290 titres** et **43 liens de téléchargement** couvrant les **33 checkpoints** sont vérifiés. Résultats : output/recovery-order-review/.
-
-La distribution courante est fall-2026-r5. Aucun code applicatif ni checkpoint n’a changé. Les autres suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
-
-## Installation de uv avant le premier projet · état précédent (17 novembre 2026)
+## Installation de uv avant le premier projet · état publié
 
 La nouvelle slide 10 présente les installers macOS/Linux et Windows, le lien officiel et le contrôle `uv --version` après réouverture du terminal. La slide 11 crée le dossier du projet et nomme les fichiers attendus ; elle précise que `.venv/` apparaît au premier `uv run`. La slide 12 installe Flask et vérifie son import avant la création explicite de `app.py`. Ces étapes restent dans le bloc de préparation de 20 minutes.
 
@@ -20,7 +14,7 @@ Les commandes de création ont été exécutées dans un dossier temporaire : `u
 
 Le build principal passe. Les trois slides ont été inspectées dans le navigateur puis rendues depuis le PDF final. Les supports contiennent **260 et 30 pages** ; leurs **290 titres** correspondent aux sources, aucun caractère ne sort des pages et les **43 liens de téléchargement** couvrent les **33 checkpoints**. Résultats et captures : output/uv-install-review/.
 
-La distribution de cette étape est la release fall-2026-r4 : deux PDF et le kit complet. Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
+La distribution courante est la release fall-2026-r4 : deux PDF et le kit complet. Aucun code applicatif ni checkpoint n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
 
 ## GitHub comme point d’entrée Git · état précédent (17 novembre 2026)
 
