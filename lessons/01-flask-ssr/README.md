@@ -76,11 +76,11 @@ Quand nous créerons un package de code `todo/`, son marker sera `todo/__init__.
 
 ## Reprendre sans perdre son travail
 
-Cloner le [dépôt GitHub du cours](https://github.com/adrien-may/ecm2026) à la première étape :
+Depuis le dossier parent de `ecm26-flask-ssr/`, cloner le [dépôt GitHub du cours](https://github.com/adrien-may/ecm2026) à la première étape. Le nouveau dossier `ecm26-flask-ssr-reprise/` conserve le travail initial :
 
 ```sh
-git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git mon-backend
-cd mon-backend
+git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git ecm26-flask-ssr-reprise
+cd ecm26-flask-ssr-reprise
 uv sync --locked
 ```
 

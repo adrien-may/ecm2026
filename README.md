@@ -2,7 +2,7 @@
 
 **260 slides de cours et 30 slides d’approfondissement**, une progression de code guidée, **33 checkpoints complets**, deux évaluations et des projets exécutables. Les explications sont en français ; les termes techniques restent en anglais. `_reference/` est conservé sans modification.
 
-Le démarrage guidé installe `uv` à la slide 10, crée le projet à la slide 11, puis ajoute Flask à la slide 12. [Installation et vérifications](docs/environment.md).
+Le démarrage guidé installe `uv` à la slide 9, crée le projet à la slide 10, présente la reprise GitHub à la slide 11, puis ajoute Flask à la slide 12. [Installation et vérifications](docs/environment.md).
 
 ## Ouvrir le cours
 
@@ -13,7 +13,7 @@ npm ci
 npm run slides -- --port 3030
 ```
 
-Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
+Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
 
 ```sh
 npm run slides:build
@@ -23,7 +23,7 @@ npm run slides:export
 
 Les liens de téléchargement des slides et des PDF pointent vers le dépôt public GitHub. Hors ligne, ouvrir `CHECKPOINTS.md` et les ZIPs du kit téléchargé à l’avance.
 
-Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
+Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
 
 Le build optionnel est dans slides/dist-options/. Le build principal est dans `slides/dist/`. Le PDF est exporté dans `output/ecm26-three-days.pdf`. L’export slide par slide prend quelques minutes et vérifie que les pages ont fini de charger.
 
@@ -43,11 +43,14 @@ Les outils sont introduits au moment du besoin. Les tests passent de la construc
 
 ## Reprendre exactement le même code
 
-[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Dépôt GitHub](https://github.com/adrien-may/ecm2026) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r4/ecm26-course-kit.zip)
+[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Dépôt GitHub](https://github.com/adrien-may/ecm2026) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r5/ecm26-course-kit.zip)
+
+En cas de reprise, ouvrir le terminal dans le dossier parent de `ecm26-flask-ssr/`. Le clone crée le dossier voisin `ecm26-flask-ssr-reprise/` sans modifier le travail initial.
 
 ```sh
-git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git mon-backend
-cd mon-backend
+git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git ecm26-flask-ssr-reprise
+cd ecm26-flask-ssr-reprise
+uv sync --locked
 git branch -r
 ```
 

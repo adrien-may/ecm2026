@@ -64,14 +64,19 @@ Le port 5001 évite le conflit fréquent de 5000 avec AirPlay sur macOS. Un port
 
 ## Reprendre sans perdre son travail
 
-Extraire le ZIP du checkpoint dans **un nouveau dossier** est la solution la plus directe. Depuis le dépôt public :
+Depuis le dossier parent de `ecm26-flask-ssr/`, cloner la branche du checkpoint dans **un nouveau dossier**. Le clone crée `ecm26-flask-ssr-reprise/` et conserve le travail initial :
 
 ```sh
-git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git mon-backend
-cd mon-backend
+git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git ecm26-flask-ssr-reprise
+cd ecm26-flask-ssr-reprise
+uv sync --locked
 git branch -r
 git worktree add ../reprise origin/flask-13-sqlite
+cd ../reprise
+uv sync --locked
 ```
+
+`uv sync --locked` prépare `.venv/` avec les versions de `uv.lock`, groupe `dev` inclus. Relancer cette commande dans le projet après chaque changement de branche. Les extras et les autres dependency groups ne sont pas sélectionnés par défaut ; les checkpoints du cours n’en ont pas besoin. Le ZIP reste une solution de secours.
 
 Cloner avant de passer hors ligne. Depuis un clone existant, `git fetch origin` récupère les mises à jour quand le réseau est disponible. Aucun compte GitHub n’est nécessaire pour lire le dépôt public. La branche `main` contient les supports, `flask-00-ready` le premier projet.
 
