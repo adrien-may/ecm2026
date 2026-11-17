@@ -22,4 +22,4 @@ Résultat attendu : **31 passed**. La page `/bonjour?name=Samira` reste disponib
 
 Les étapes 09–12 stockent les tasks en mémoire. À partir de 13, `init-db` crée les tables absentes dans `instance/flask-todo.sqlite`, sans effacer les données existantes. Les tests utilisent des fichiers temporaires isolés. Aux étapes 15 et 16, les mêmes 33 tests restent verts.
 
-Pour reprendre, décompresser un ZIP dans un nouveau dossier ou créer un worktree depuis le bundle. Ne pas écraser un travail en cours. Après tout changement de checkpoint, relancer `uv sync --locked`.
+Pour reprendre depuis un clone du [dépôt GitHub](https://github.com/adrien-may/ecm2026), créer un dossier indépendant : `git worktree add --detach ../reprise origin/flask-12-package`. Ne pas écraser un travail en cours. Après tout changement de checkpoint, relancer `uv sync --locked`.
