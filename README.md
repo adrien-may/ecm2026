@@ -11,7 +11,7 @@ npm ci
 npm run slides -- --port 3030
 ```
 
-Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r2/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
+Présentation : [localhost:3030](http://localhost:3030). Les notes du présentateur expliquent les pauses de code, les questions et les transitions. Le [PDF du cours](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r3/ecm26-three-days.pdf) fournit une version hors ligne ; les démos restent des applications séparées.
 
 ```sh
 npm run slides:build
@@ -21,7 +21,7 @@ npm run slides:export
 
 Les liens de téléchargement des slides et des PDF pointent vers le dépôt public GitHub. Hors ligne, ouvrir `CHECKPOINTS.md` et les ZIPs du kit téléchargé à l’avance.
 
-Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r2/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
+Pour les ateliers optionnels : **npm run slides:options -- --port 3032**. Le [PDF des approfondissements](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r3/ecm26-options.pdf) conserve SQLModel et NestJS. L’export produit les deux PDF ; leurs liens couvrent les 33 checkpoints.
 
 Le build optionnel est dans slides/dist-options/. Le build principal est dans `slides/dist/`. Le PDF est exporté dans `output/ecm26-three-days.pdf`. L’export slide par slide prend quelques minutes et vérifie que les pages ont fini de charger.
 
@@ -41,7 +41,7 @@ Les outils sont introduits au moment du besoin. Les tests passent de la construc
 
 ## Reprendre exactement le même code
 
-[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Bundle Git](slides/public/checkpoints/ecm26-course.bundle) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r2/ecm26-course-kit.zip)
+[Catalogue des 33 checkpoints](CHECKPOINTS.md) · [Dépôt GitHub](https://github.com/adrien-may/ecm2026) · [Kit complet](https://github.com/adrien-may/ecm2026/releases/download/fall-2026-r3/ecm26-course-kit.zip)
 
 ```sh
 git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git mon-backend
@@ -49,9 +49,9 @@ cd mon-backend
 git branch -r
 ```
 
-La branche `main` contient les supports. Les 33 autres branches contiennent les projets à chaque étape. Hors ligne, remplacer l’URL du clone par le fichier `ecm26-course.bundle` téléchargé à l’avance.
+La branche `main` contient les supports. Les 33 autres branches contiennent les projets à chaque étape. Cloner avant la séance pour disposer des branches même sans réseau.
 
-Chaque slide de synchronisation lie un ZIP complet et indique une branche et le résultat attendu. Pour reprendre sans écraser son travail, extraire dans un nouveau dossier ou utiliser un worktree depuis une branche `origin/...`. Le [guide d'environnement](docs/environment.md) donne les commandes et les cas de panne courants.
+Chaque slide de synchronisation indique la branche Git à rejoindre et le résultat attendu. Un ZIP complet reste disponible en secours. Pour reprendre sans écraser son travail, extraire dans un nouveau dossier ou utiliser un worktree depuis une branche `origin/...`. Le [guide d'environnement](docs/environment.md) donne les commandes et les cas de panne courants.
 
 Les emplacements de `__init__.py` sont montrés explicitement : d'abord `tests/__init__.py`, ensuite `todo/__init__.py`, puis `backend/scores/__init__.py`. Les slides distinguent package classique, convention de tests et dossiers qui n'ont pas de marker.
 
@@ -67,6 +67,6 @@ Le parcours commun utilise FastAPI ; NestJS reste une option séparée. La prés
 
 ## Vérification technique
 
-Versions répétées : Python 3.12.9, uv 0.6.3, Node 26.10.0. Les projets possèdent leurs lockfiles et leurs propres commandes de test. `npm run verify:checkpoints` vérifie les archives dans des dossiers temporaires, les étapes rouges, la régression du template et la récupération depuis le bundle.
+Versions répétées : Python 3.12.9, uv 0.6.3, Node 26.10.0. Les projets possèdent leurs lockfiles et leurs propres commandes de test. `npm run verify:checkpoints` vérifie les archives dans des dossiers temporaires, les étapes rouges, la régression du template et la récupération depuis le clone GitHub.
 
 Le projet final accepte des scores déclarés par le client. Sa validation n'est pas un mécanisme anti-cheat ; cette limite fait partie de la leçon. Aucun service distant ni déploiement public n'est requis.

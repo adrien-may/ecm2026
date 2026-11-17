@@ -44,7 +44,7 @@ Puis 145 minutes de réalisation et 30 de vérification croisée des README. Une
 
 Après chaque slide de synchronisation, faire lancer la commande annoncée et regarder le résultat. Les étudiants comparent l'arbre, les imports et les fichiers ; ceux qui reprennent extraient un ZIP dans un nouveau dossier. Le professeur ouvre le même checkpoint que le groupe. Tous les états nommés sont distribués avec code complet et lockfile.
 
-Le bundle contient plusieurs familles de projets ; ne pas passer de Flask à NestJS sans expliquer le nouveau dossier. Un ZIP par projet convient aux personnes moins à l'aise avec Git.
+Le dépôt GitHub contient plusieurs familles de projets ; ne pas passer de Flask à NestJS sans expliquer le nouveau dossier. Utiliser Git pour suivre les branches. Les ZIPs restent une solution de secours.
 
 ## Arbitrages retenus pour terminer les supports
 

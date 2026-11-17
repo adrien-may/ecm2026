@@ -11,5 +11,5 @@ output/
 .env
 .env.local
 instance/
-/slides/public/checkpoints/ecm26-flask-checkpoints.bundle
+*.bundle
 .DS_Store

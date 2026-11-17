@@ -2,7 +2,7 @@
 
 Versions réellement utilisées pour construire le kit : **Python 3.12.9**, **uv 0.6.3**, **Node 26.10.0**. Les lockfiles fixent les packages. Utiliser la version Node répétée en classe, même si plusieurs projets acceptent des versions plus anciennes. Aucun compte cloud n'est nécessaire.
 
-Avant le cours : vérifier `git --version`, `uv --version`, `node --version`, `npm --version`, puis `uv python install 3.12`. Télécharger le bundle et les ZIPs pendant que le réseau fonctionne. Installer les dépendances d'un checkpoint de chaque écosystème avant la séance si le réseau de l'école est incertain. Les ZIPs contiennent le code et les lockfiles, **pas les caches de packages** ; un premier install hors ligne n'est pas garanti.
+Avant le cours : vérifier `git --version`, `uv --version`, `node --version`, `npm --version`, puis `uv python install 3.12`. Cloner le dépôt GitHub pendant que le réseau fonctionne ; les branches récupérées restent disponibles localement. Installer les dépendances d'un checkpoint de chaque écosystème avant la séance si le réseau de l'école est incertain. Les ZIPs contiennent le code et les lockfiles, **pas les caches de packages** ; un premier install hors ligne n'est pas garanti.
 
 ## Python
 
@@ -52,6 +52,6 @@ git branch -r
 git worktree add ../reprise origin/flask-13-sqlite
 ```
 
-Hors ligne, télécharger `ecm26-course.bundle` à l’avance et remplacer l’URL du clone par ce fichier. Aucun compte GitHub n’est nécessaire pour lire le dépôt public. La branche `main` contient les supports, `flask-00-ready` le premier projet.
+Cloner avant de passer hors ligne. Depuis un clone existant, `git fetch origin` récupère les mises à jour quand le réseau est disponible. Aucun compte GitHub n’est nécessaire pour lire le dépôt public. La branche `main` contient les supports, `flask-00-ready` le premier projet.
 
 Les branches correspondent à des projets indépendants ou à des étapes, pas toutes au même dossier de travail. Lire le README après un changement de branche. Conserver les modifications locales avant toute reprise ; aucun `reset --hard` n'est nécessaire.

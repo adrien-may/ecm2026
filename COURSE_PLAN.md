@@ -1,6 +1,6 @@
 # ECM 2026: three-day backend and web course
 
-Implemented course plan, updated 16 November 2026. The three-day materials are complete for instructor review; institutional grading and submission choices remain explicitly identified below.
+Implemented course plan, updated 17 November 2026. The three-day materials are complete for instructor review; institutional grading and submission choices remain explicitly identified below.
 
 ## Agreed constraints
 
@@ -115,7 +115,7 @@ Use the previous course's concrete progression as the foundation: create the app
 
 The opening greeting route isolates HTTP and rendering. The next module applies the same cycle to tasks: first JSON behaviour, then CRUD, persistence and the existing React client. Do not hide this transition behind unrelated examples.
 
-The following opening checkpoints now exist as local Git branches, downloadable ZIPs and a portable Git bundle:
+The following opening checkpoints now exist as GitHub branches and downloadable ZIPs:
 
 | Branch | New idea | Student check |
 | --- | --- | --- |
@@ -131,7 +131,7 @@ The following opening checkpoints now exist as local Git branches, downloadable 
 
 See `lessons/01-flask-ssr/README.md` for exact slide numbers, files, commands, results and download links. The instructor's runnable lesson is the last checkpoint, not the student's starting point.
 
-The bundle can be cloned without a remote repository. Students with a clean working tree can switch branches; students with unfinished work can open a checkpoint in a separate worktree or unzip it into a new folder. Never require discarding student work as the recovery path.
+Clone the public GitHub repository before the course; fetched branches remain available offline. Students with a clean working tree can switch branches; students with unfinished work can open a checkpoint in a separate worktree or unzip it into a new folder. Never require discarding student work as the recovery path.
 
 The later CRUD, SQLite, CORS, Marshmallow, Blueprint and FastAPI checkpoints are implemented and listed in CHECKPOINTS.md. Flask 15 and 16 preserve all 33 tests from Flask 14 unchanged.
 
@@ -368,13 +368,13 @@ Provide a pre-course environment checklist, known-good checkpoints, downloadable
 
 ## Current implementation status
 
-The three-day delivery is implemented: **259 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, a portable Git bundle, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
+The three-day delivery is implemented: **259 main slides and 30 optional slides**, **33 checkpoint branches and ZIPs**, two PDF handouts, runnable lessons, a game starter and reference, contracts, briefs, rubrics and environment/teacher guides. Start from README.md and CHECKPOINTS.md.
 
 - Day1: Flask introduced progressively, SSR and the weak/useful test comparison retained, then task CRUD, a separate package refactor, SQLite, isolated tests and React integration, followed by Marshmallow schemas, Blueprint organization and Flask-smorest/OpenAPI.
 - Day2: announce the game target, transfer the todo to FastAPI, create the Canvas interaction, and integrate scores using the same FastAPI/SQLAlchemy stack. A five-minute 3D opening follows Canvas; SQLModel and NestJS have a separate optional deck.
 - Day3: architecture through the same game, including hexa and clean; other backend responsibilities (authentication, jobs/cron, webhooks, cache, MCP), then implementation, reproducibility, presentation and a synthesis of the three days. No numerical final-project grid or per-person time limit.
 - Exact package marker placement is shown in the opening, Flask package refactor, FastAPI tree and game backend tree. No marker at the project root, in templates or in frontend folders.
-- Clean checkpoint installation, intentional red transitions, regression behavior, bundle clone/worktree recovery, browser workflows and PDF rendering were checked. Detailed results are in docs/verification.md.
-- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026-r2 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
+- Clean checkpoint installation, intentional red transitions, regression behavior, Git clone/worktree recovery, browser workflows and PDF rendering were checked. Detailed results are in docs/verification.md.
+- The local course remains on localhost:3030. Sources and checkpoints are published at https://github.com/adrien-may/ecm2026 ; PDFs and the portable kit use the fall-2026-r3 release. Download links in both decks and PDFs point to GitHub. Offline copies remain in output/ and slides/public/checkpoints/.
 - No instructor content approval was assumed. NestJS is in the separate optional support; the baseline is a submission freeze before day3 orals, with the after-course alternative documented.
 - No remote repository was published. The original Google Slides and _reference/ remain unchanged. The instructor checkout retains its original uncommitted state; course checkpoint refs are separate student project snapshots.

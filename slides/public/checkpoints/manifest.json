@@ -1,92 +1,92 @@
 [
   {
     "branch": "flask-00-ready",
-    "commit": "def5092f2eb8efd9f947b054d53561a652238e67",
+    "commit": "79f231f3004d36db719345d9abb7af6db36c7c46",
     "file": "00-ready.zip"
   },
   {
     "branch": "flask-01-flask",
-    "commit": "e9f61648899e850614a8f77a7bc26448b10621b1",
+    "commit": "0858933f205579a1b8cb71fb7a06ccdb35017345",
     "file": "01-flask.zip"
   },
   {
     "branch": "flask-02-pytest",
-    "commit": "d0f2d8d098d1e1ae351b97c8a97b7a7ede87eef3",
+    "commit": "2a07a04217329e1e0db8c81b03167fbc2616a2e5",
     "file": "02-pytest.zip"
   },
   {
     "branch": "flask-03-route",
-    "commit": "10132624f1b7caed5ccd85af9208f3a2246642e7",
+    "commit": "e2024be4f96a4f96af08b5a15b81906350d7bc79",
     "file": "03-route.zip"
   },
   {
     "branch": "flask-04-template",
-    "commit": "73a594f1af530b585b98e8dc7d4b1121792e4b27",
+    "commit": "16d8fb9ddb668d1fe24b1a6a2f93c21238e1cb2a",
     "file": "04-template.zip"
   },
   {
     "branch": "flask-05-name",
-    "commit": "e1fe656dddffe1b1bc051201dd3e99fa08fc66f9",
+    "commit": "0f4b7a139141a3bb22928af08cd469d63b2d390a",
     "file": "05-name.zip"
   },
   {
     "branch": "flask-06-fixtures",
-    "commit": "68ed5737359cad76c3022e242da7f82a7bb336b5",
+    "commit": "0ad7bda9e9c5156e7bf8a806e8d696072ed5b178",
     "file": "06-fixtures.zip"
   },
   {
     "branch": "flask-07-test-quality",
-    "commit": "db975185d30dff9e374321779c84fbfd0857a1a7",
+    "commit": "30e9d8219cafa6779466aefb942d04339278257c",
     "file": "07-test-quality.zip"
   },
   {
     "branch": "flask-08-json",
-    "commit": "83bc76e7fb0a565fad62fe128fc71340976c6138",
+    "commit": "60245a057218d1eab0676fea5224e5287e79646b",
     "file": "08-json.zip"
   },
   {
     "branch": "flask-09-list",
-    "commit": "4e6abeb9fee84c713d197c9857456b0289556154",
+    "commit": "1df04462b7d931e7b2d742908a18895aefff2fef",
     "file": "09-list.zip"
   },
   {
     "branch": "flask-10-create",
-    "commit": "86c3698c4f8be0b5a6b3538262cab84cf8072c58",
+    "commit": "a22916a1e7796606b3cc17f1612fa93cd612d942",
     "file": "10-create.zip"
   },
   {
     "branch": "flask-11-crud",
-    "commit": "27f52c8ff153a98a8849258f2b652807f097431c",
+    "commit": "bcd9485f41c159b4879677935f3994098230793a",
     "file": "11-crud.zip"
   },
   {
     "branch": "flask-12-package",
-    "commit": "375908eb277d7b769ee6ccff2f93afce296315fd",
+    "commit": "cfb2fa63ed9b2dc42f990c4c07938baf461cf269",
     "file": "12-package.zip"
   },
   {
     "branch": "flask-13-sqlite",
-    "commit": "ba24d80e82762f841044d5a6b9b4467009001601",
+    "commit": "dfd15f34d726a58f54af0d312aa3e9ac5a14d638",
     "file": "13-sqlite.zip"
   },
   {
     "branch": "flask-14-cors",
-    "commit": "11644e016a2b5b712dd205e15c80780349de3834",
+    "commit": "af1739bfac0866ef3b452389d41a7bfece2f1c5e",
     "file": "14-cors.zip"
   },
   {
     "branch": "flask-15-marshmallow",
-    "commit": "1d37e5f5e89b053380c7f0b05550f3f3128f08ab",
+    "commit": "cdf50c0c2bb6c1d8a8c717c92f473a3809bde175",
     "file": "15-marshmallow.zip"
   },
   {
     "branch": "flask-16-blueprint",
-    "commit": "c2ddc235fd7ed2b8754dbb1198e50440cbb73188",
+    "commit": "b8d791a075793704120bbe86f3f5cde48dfde829",
     "file": "16-blueprint.zip"
   },
   {
     "branch": "flask-17-openapi",
-    "commit": "c666073d60c7af3fe1f91359067113b22decb79d",
+    "commit": "e26cccffdea53b010ac6f5822ad8d15960402774",
     "file": "17-openapi.zip"
   },
   {
@@ -101,12 +101,12 @@
   },
   {
     "branch": "fastapi-02-crud",
-    "commit": "e3b9a76d6b14bc6c34ecbb0983eb129467a02e0f",
+    "commit": "4155909bc22d91df339814e53f329ff3da8209ee",
     "file": "fastapi-02-crud.zip"
   },
   {
     "branch": "fastapi-03-sqlmodel",
-    "commit": "14de7c07f6f8ab6359deffeb5ab52a9b34127907",
+    "commit": "f32a3b0dfa668460d204c8ee9a5e86c7ce2a0e54",
     "file": "fastapi-03-sqlmodel.zip"
   },
   {

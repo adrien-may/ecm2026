@@ -16,7 +16,7 @@ def main():
         for path in (ROOT / directory).rglob("*"):
             if not path.is_file() or any(part in SKIP for part in path.relative_to(ROOT).parts):
                 continue
-            if path.name in {".env", ".env.local", "ecm26-flask-checkpoints.bundle"}:
+            if path.name in {".env", ".env.local"} or path.suffix == ".bundle":
                 continue
             sources.append(path)
     with ZipFile(OUT, "w", ZIP_DEFLATED) as archive:
@@ -25,6 +25,7 @@ def main():
             archive.write(path, "ecm26/" + str(path.relative_to(ROOT)))
     with ZipFile(OUT) as archive:
         assert archive.testzip() is None
+        assert not any(name.endswith(".bundle") for name in archive.namelist())
         assert not any(part in SKIP or part == "_reference" for name in archive.namelist() for part in Path(name).parts)
         print(f"Course kit: {len(archive.namelist())} files, {OUT.stat().st_size:,} bytes")
 

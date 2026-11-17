@@ -1,6 +1,6 @@
 # Checkpoints du cours
 
-Chaque ZIP contient un projet complet et son lockfile. Les noms de branches ouvrent leur code sur [GitHub](https://github.com/adrien-may/ecm2026). Les branches sont aussi réunies dans le [bundle du cours](slides/public/checkpoints/ecm26-course.bundle). Voir [le guide de reprise](docs/environment.md).
+Chaque ZIP contient un projet complet et son lockfile. Les noms de branches ouvrent leur code sur [GitHub](https://github.com/adrien-may/ecm2026). Voir [le guide de reprise](docs/environment.md).
 
 | Branche | Projet complet |
 | --- | --- |
@@ -46,4 +46,4 @@ Les familles Flask, FastAPI, Canvas et NestJS suivent chacune une progression. L
 npm run verify:checkpoints
 ```
 
-Cette commande utilise uv et npm pour installer dans des dossiers temporaires, lancer les tests, vérifier les étapes rouges et cloner le bundle. Aucun checkout du dépôt enseignant ni donnée de développement ne sont remplacés.
+Cette commande utilise uv et npm pour installer dans des dossiers temporaires, lancer les tests, vérifier les étapes rouges et cloner le dépôt GitHub. Aucun checkout du dépôt enseignant ni donnée de développement ne sont remplacés.

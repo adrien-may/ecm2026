@@ -55,7 +55,7 @@ Ne pas créer `todo/todo/`, `tests/tests/` ou un marker à la racine. `python -m
 
 Le pin Starlette stabilise l'API du test client utilisée dans le cours. Les lockfiles fixent aussi les versions transitives. Une deprecation warning provenant d'AnyIO/Starlette peut apparaître avec ce jeu de versions ; elle ne correspond pas à un test échoué.
 
-Pour reprendre sans écraser son code : extraire le ZIP dans un nouveau dossier, ou `git worktree add ../reprise origin/fastapi-01-create` depuis le clone du bundle du cours.
+Pour reprendre sans écraser son code : extraire le ZIP dans un nouveau dossier, ou `git worktree add ../reprise origin/fastapi-01-create` depuis le clone GitHub du cours.
 
 ## Un pont entre Flask, SQLAlchemy et SQLModel
 

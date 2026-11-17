@@ -1,6 +1,6 @@
 # Reprise du cours ECM 2026
 
-Mis à jour le 16 novembre 2026. Le parcours principal comporte **259 slides**, complétées par **30 slides optionnelles**. Les 33 checkpoints sont conservés. Dépôt public : https://github.com/adrien-may/ecm2026. Les PDF de 259 et 30 pages sont vérifiés : 289 titres et 44 liens GitHub couvrant les 33 checkpoints. Le kit contient ces exports et les sources actualisées. La 3D revient dans le parcours commun en deux slides ; voir docs/verification.md.
+Mis à jour le 17 novembre 2026. Le parcours principal comporte **259 slides**, complétées par **30 slides optionnelles**. Les 33 checkpoints sont conservés. Dépôt public : https://github.com/adrien-may/ecm2026. Les PDF de 259 et 30 pages sont vérifiés : 289 titres et 43 liens de téléchargement GitHub couvrant les 33 checkpoints. Le kit contient ces exports et les sources actualisées. La 3D revient dans le parcours commun en deux slides ; voir docs/verification.md.
 
 ## Repères de relecture
 
@@ -28,7 +28,7 @@ Le parcours commun conserve FastAPI + SQLAlchemy jusqu’au jeu. SQLModel propos
 
 ## Projets et reprise
 
-CHECKPOINTS.md indexe les 33 branches et ZIPs, avec le bundle Git. Les sources du cours sont sur main ; les autres branches contiennent les projets. Les PDF et le kit sont distribués dans la release fall-2026-r2 : https://github.com/adrien-may/ecm2026/releases/tag/fall-2026-r2. La slide 8 et docs/environment.md expliquent le clone public et la reprise hors ligne. Les projets sont dans lessons/, projects/ et workshops/. Les README de game-starter, fastapi-03-sqlmodel et nest-02-sqlite ont été synchronisés avec la séparation des parcours ; leur code est inchangé.
+CHECKPOINTS.md indexe les 33 branches et ZIPs, sur GitHub. Les sources du cours sont sur main ; les autres branches contiennent les projets. Les PDF et le kit sont distribués dans la release fall-2026-r3 : https://github.com/adrien-may/ecm2026/releases/tag/fall-2026-r3. La slide 8 et docs/environment.md expliquent le clone GitHub et la reprise par branche. Les projets sont dans lessons/, projects/ et workshops/. Les README de game-starter, fastapi-03-sqlmodel et nest-02-sqlite ont été synchronisés avec la séparation des parcours ; leur code est inchangé.
 
 Attention : lessons/03-fastapi-todo contient le résultat optionnel SQLModel. Pour suivre le parcours commun, extraire fastapi-02-crud. Les deux versions ont 25 tests.
 
@@ -50,6 +50,8 @@ npm run slides:build et npm run slides:build:options produisent les deux sites s
 
 Revue de la réorganisation : output/flow-review/. Nouveau chapitre et conclusion : output/backend-topics-review/. Les vérifications complètes précédentes des projets restent dans docs/verification.md. Seule la démo Three.js change : slider de caméra et controls visibles à côté du jeu. Les règles et les tests du jeu sont conservés.
 
-_reference/ et le Google Slides original restent inchangés. Les refs étudiants sont séparées du checkout enseignant. main et canvas-05-three sont publiés avec les archives et le bundle actualisés.
+_reference/ et le Google Slides original restent inchangés. Les refs étudiants sont séparées du checkout enseignant. Les supports et les 33 branches de checkpoints sont publiés avec les archives actualisées. Les anciennes instructions de bundle ont été remplacées par la reprise GitHub.
 
 Publication : les liens de téléchargement utilisent GitHub, y compris dans les PDF. Les databases de développement dans instance/ et _reference/ sont exclus du dépôt et du kit.
+
+GitHub est le point d’entrée Git du cours. Aucun lien .bundle dans les supports courants ; le kit ne contient plus ce format. Les ZIPs restent disponibles en secours.

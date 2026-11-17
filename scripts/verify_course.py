@@ -94,8 +94,8 @@ def main():
         for path in ["projects/game-starter/frontend/src/game.js", "projects/game-reference/frontend/src/game.js", "workshops/three-demo/src/game.js"]:
             assert (ROOT / path).read_bytes() == canonical, path
 
-        clone = Path(temp) / "bundle-clone"
-        run(ROOT, "git", "clone", "-b", "flask-00-ready", str(ARCHIVES / "ecm26-course.bundle"), str(clone))
+        clone = Path(temp) / "github-clone"
+        run(ROOT, "git", "clone", "-b", "flask-00-ready", "https://github.com/adrien-may/ecm2026.git", str(clone))
         branches = run(clone, "git", "branch", "-r")
         assert all(f"origin/{item['branch']}" in branches for item in manifest), branches
         run(clone, "git", "switch", "fastapi-01-create")
@@ -105,7 +105,7 @@ def main():
         run(clone, "git", "worktree", "add", str(recovery), "origin/flask-13-sqlite")
         assert (clone / "student-notes.txt").read_text() == "Keep my work\n"
         assert (recovery / "todo/models.py").exists()
-        print("OK portable bundle: all branches and non-destructive recovery", flush=True)
+        print("OK GitHub clone: all branches and non-destructive recovery", flush=True)
 
 
 if __name__ == "__main__":

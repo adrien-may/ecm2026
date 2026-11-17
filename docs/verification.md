@@ -1,8 +1,18 @@
-# Vérifications du kit · 16 novembre 2026
+# Vérifications du kit · 17 novembre 2026
 
 Runtime : Python 3.12.9, uv 0.6.3, Node 26.10.0. Vérifications sur les projets extraits, les sources de l’enseignant et le navigateur.
 
-## Ouverture 3D dans le parcours commun · état actuel
+## GitHub comme point d’entrée Git · état actuel
+
+La slide 8 ouvre le dépôt GitHub et montre le clone à la première branche Flask. Les guides et les README des checkpoints utilisent le clone GitHub et les worktrees. Les comparaisons de checkpoints nomment les deux branches plutôt que HEAD~1, pour rester pertinentes après une modification de documentation.
+
+Les 20 checkpoints qui mentionnaient l’ancienne distribution ont reçu un commit limité à README.md. Leurs autres fichiers et leur historique sont conservés ; les 13 autres checkpoints sont inchangés. Les 33 ZIPs correspondent aux refs du manifest. Le générateur ne produit plus de fichier .bundle et le kit exclut ce format. Aucun lien .bundle dans les sources Markdown courantes ni dans les PDF. Les anciens comptes rendus ci-dessous conservent leurs résultats historiques.
+
+Le build principal passe. La slide 8 a été inspectée dans le navigateur puis dans le PDF actualisé. Les supports conservent **259 et 30 pages**, leurs **289 titres** et **43 liens de téléchargement** couvrant les 33 checkpoints. Le normaliseur conserve les URLs GitHub. Résultats et capture : output/github-only-review/.
+
+La distribution courante est la release fall-2026-r3 : deux PDF et le kit complet. Aucun code applicatif n’a changé ; les suites applicatives n’ont pas été relancées. _reference/ reste inchangé.
+
+## Ouverture 3D dans le parcours commun · état précédent (16 novembre 2026)
 
 Le support principal contient **259 slides** ; les approfondissements en contiennent **30**. Les slides **212–213** ramènent une ouverture 3D de cinq minutes après Canvas. Les quatre anciennes slides techniques de l’option 3D sont remplacées par une comparaison visuelle et une démo prête à lancer. La carte du jour 2 et le support optionnel sont cohérents avec ce parcours.
 
@@ -82,7 +92,7 @@ L’export utilise --per-slide, car l’export global avait produit des pages vi
 
 Le précédent export, conservé dans le compte rendu historique, contenait **262 pages**, les **262 titres attendus** et **43 liens de téléchargement** couvrant les **33 checkpoints**, sur le port 3030. Aucun caractère ne sort de la page. Toutes les pages ont été rendues et les sept planches inspectées. Deux titres 3D, le nombre de tests du checkpoint POST et le lien OpenAPI ont été réexportés séparément, intégrés et contrôlés à nouveau. Résultats : output/pedagogy-pdf-review/audit.json. Le contrôle d’export refuse désormais un PDF auquel manque un lien de checkpoint ; il a été vérifié sur le PDF incomplet puis sur sa correction. Ce résultat appartient à la vérification précédente.
 
-Le kit contient sources, guides, briefs, contrats, lockfiles, archives, bundle et PDF. Il exclut node_modules, .venv, databases de développement et _reference/.
+Le kit courant contient sources, guides, briefs, contrats, lockfiles, archives ZIP et PDF. Il exclut node_modules, .venv, databases de développement et _reference/.
 
 ## Limites
 

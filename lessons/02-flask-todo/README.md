@@ -28,7 +28,7 @@ Dans un second terminal, au même endroit : `uv run pytest -q` → **35 passed**
 | `flask-16-blueprint` | Regrouper les routes avec Blueprint et les enregistrer | Les mêmes 33 tests |
 | `flask-17-openapi` | Flask-smorest, arguments/response, OpenAPI et Swagger UI | 35 passed |
 
-Les ZIPs sont liés dans les slides et dans le catalogue des checkpoints. Chaque branche contient le projet entier et son `uv.lock`. Après chaque changement de checkpoint : `uv sync --locked`, puis les commandes de son README. Pour récupérer sans écraser un travail local, utiliser un nouveau dossier depuis le ZIP ou `git worktree add ../reprise origin/flask-11-crud` depuis un clone du bundle.
+Les ZIPs sont liés dans les slides et dans le catalogue des checkpoints. Chaque branche contient le projet entier et son `uv.lock`. Après chaque changement de checkpoint : `uv sync --locked`, puis les commandes de son README. Pour récupérer sans écraser un travail local, utiliser un nouveau dossier depuis le ZIP ou `git worktree add ../reprise origin/flask-11-crud` depuis un clone du dépôt GitHub.
 
 Les checkpoints en mémoire perdent les tasks à chaque redémarrage. Ce défaut est volontaire et motive SQLite. Ne pas lancer plusieurs workers avec cette version en mémoire.
 

@@ -76,10 +76,10 @@ Quand nous créerons un package de code `todo/`, son marker sera `todo/__init__.
 
 ## Reprendre sans perdre son travail
 
-Télécharger le [bundle des 33 branches du cours](../../slides/public/checkpoints/ecm26-course.bundle), puis le cloner :
+Cloner le [dépôt GitHub du cours](https://github.com/adrien-may/ecm2026) à la première étape :
 
 ```sh
-git clone -b flask-00-ready ecm26-course.bundle mon-backend
+git clone -b flask-00-ready https://github.com/adrien-may/ecm2026.git mon-backend
 cd mon-backend
 uv sync --locked
 ```
@@ -101,7 +101,7 @@ uv sync --locked
 uv run pytest -q
 ```
 
-Les fichiers précédents restent dans leur dossier. Aucun `reset --hard`, `clean` ou effacement global n’est nécessaire. Pour comparer une étape à la précédente : `git diff HEAD~1` (à partir de 01).
+Les fichiers précédents restent dans leur dossier. Aucun `reset --hard`, `clean` ou effacement global n’est nécessaire. Pour comparer deux checkpoints : `git diff origin/flask-02-pytest origin/flask-03-route`. Cette comparaison porte sur les deux étapes nommées, même si leur documentation a reçu des commits supplémentaires.
 
 Sans Git : télécharger le ZIP de l’étape, le décompresser dans un **nouveau dossier**, l’ouvrir dans l’éditeur et y lancer `uv sync --locked`. Ne pas écraser son travail avec l’archive.
 

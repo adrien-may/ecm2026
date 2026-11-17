@@ -71,7 +71,7 @@ Annoncer les arrêts rouges attendus : ils font partie de l'exercice, pas d'un i
 
 <div class="lesson-step">Repères</div>
 
-<a href="https://github.com/adrien-may/ecm2026/raw/refs/heads/main/slides/public/checkpoints/ecm26-course.bundle" download>Télécharger toutes les branches (.bundle)</a>
+[Ouvrir le dépôt du cours sur GitHub](https://github.com/adrien-may/ecm2026)
 
 ```sh
 git clone -b flask-00-ready \
@@ -79,13 +79,13 @@ git clone -b flask-00-ready \
 cd mon-backend
 ```
 
-À chaque point de synchronisation : **une branche + un ZIP complet**.
+À chaque point de synchronisation : **retrouver la branche indiquée sur GitHub**.
 
-Un ZIP se décompresse dans un nouveau dossier. Votre travail reste disponible.
+Le clone contient toutes les branches. **Les ZIPs restent une solution de secours.**
 
 <!--
 5 min. Le dépôt public ne demande aucun compte GitHub pour cloner. La branche main contient les supports ; flask-00-ready contient le premier projet.
-Hors ligne : télécharger le bundle à l’avance, puis remplacer l’URL du clone par ecm26-course.bundle. Les mêmes branches sont disponibles.
+Cloner avant la séance si le réseau risque de manquer : les branches récupérées restent disponibles localement.
 Pour suivre depuis zéro, utiliser la diapositive suivante dans un autre dossier.
 Depuis le clone, git switch flask-03-route suffit si le travail est enregistré et l'arbre propre.
 Avec du travail non enregistré : git worktree add --detach ../reprise-route origin/flask-03-route.

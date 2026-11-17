@@ -33,13 +33,8 @@ def main():
         prefix = f"ecm26-{name}" if name.startswith("flask-") else name
         git("archive", "--format=zip", f"--prefix={prefix}/", f"--output={path}", name)
         manifest.append({"branch": name, "commit": git("rev-parse", name).decode().strip(), "file": path.name})
-    bundle = OUT / "ecm26-course.bundle"
-    if bundle.exists():
-        bundle.unlink()
-    git("bundle", "create", str(bundle), *[f"refs/heads/{name}" for name in names])
-    git("bundle", "verify", str(bundle))
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(f"Exported {len(names)} checkpoint ZIPs and the portable course bundle")
+    print(f"Exported {len(names)} checkpoint ZIPs and their Git branch manifest")
 
 
 if __name__ == "__main__":
